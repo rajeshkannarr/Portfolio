@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajesh Kanna RR - Payroll & Finance Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       /* Dark Mode Variables (Default) */
+:root {
+    --bg-primary: #0a0e27;
+    --bg-secondary: #151933;
+    --accent: #6366f1; /* Original accent, not used for personal colors */
+    --accent-hover: #818cf8; /* Original accent, not used for personal colors */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --card-bg: rgba(30, 41, 59, 0.5);
+    --border: rgba(99, 102, 241, 0.2);
+
+    /* Personal Webpage Colors (Dark Mode) */
+    --personal-bg-light: rgba(25, 35, 50, 0.7); /* Slightly lighter dark for cards */
+    --personal-bg-dark: rgba(15, 20, 30, 0.9); /* Deeper dark for nav */
+    --personal-accent-light: #4CAF50; /* A vibrant green */
+    --personal-accent-dark: #388E3C; /* A darker green for hover */
+    --personal-text-highlight: #FFD700; /* Gold for special text */
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --accent: #1a73e8; /* Original accent, not used for personal colors */
+    --accent-hover: #4285f4; /* Original accent, not used for personal colors */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --border: rgba(26, 115, 232, 0.2);
+
+    /* Personal Webpage Colors (Light Mode) - Now also green */
+    --personal-bg-light: rgba(255, 255, 255, 0.9);
+    --personal-bg-dark: rgba(240, 242, 245, 0.9);
+    --personal-accent-light: #4CAF50; /* Keep vibrant green for light mode */
+    --personal-accent-dark: #388E3C; /* Keep darker green for hover */
+    --personal-text-highlight: #FFC107; /* Amber for special text */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+    /* Unique background gradient for dark mode */
+    background: linear-gradient(120deg, #0a0e27 0%, #1f2a57 40%, #151933 75%, #0a0e27 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.light-mode {
+    /* Unique background gradient for light mode */
+    background: linear-gradient(135deg, #e0f7e9 0%, #a8d5a3 50%, #d0f0c0 100%);
+    color: var(--text-primary);
+}
+
+        /* Animated background orbs */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .orb1 {
+            width: 400px;
+            height: 400px;
+            background: var(--personal-accent-light);
+            top: -200px;
+            right: -100px;
+        }
+
+        .orb2 {
+            width: 300px;
+            height: 300px;
+            background: #FF6347; /* Tomato red for contrast */
+            bottom: -150px;
+            left: -100px;
+            animation-delay: -5s;
+        }
+
+        .orb3 {
+            width: 350px;
+            height: 350px;
+            background: #8A2BE2; /* Blue Violet for another contrast */
+            top: 50%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--personal-bg-dark);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.5s ease;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: var(--personal-accent-light);
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            transition: background 0.5s ease;
+        }
+
+        .name-title h3 {
+            font-size: 1.3  rem;
+            margin-bottom: 0.2rem;
+            color: var(--text-primary);
+            transition: color 0.5s ease;
+        }
+
+        .name-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.5s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.7rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--personal-accent-light);
+            color: var(--text-primary);
+        }
+
+        /* Theme Toggle Switch */
+        .theme-toggle {
+            display: flex;
+            align-items: left;
+            gap: 0.75rem;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: var(--text-secondary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .toggle-switch.active {
+            background: var(--personal-accent-light);
+            border-color: var(--personal-accent-dark);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 90%;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(30px);
+        }
+
+        .toggle-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            user-select: none;
+        }
+
+        .toggle-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            right: 4px;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            pointer-events: none;
+        }
+
+        .toggle-icon {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .toggle-switch.active .sun-icon {
+            opacity: 0.3;
+        }
+
+        .toggle-switch.active .moon-icon {
+            opacity: 1;
+        }
+
+        .toggle-switch:not(.active) .sun-icon {
+            opacity: 1;
+        }
+
+        .toggle-switch:not(.active) .moon-icon {
+            opacity: 0.3;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1rem; /* Adjusted padding for mobile */
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--personal-accent-light);
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Reduced gap for mobile */
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            padding: 0.6rem 1.2rem; /* Adjusted padding */
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+            transition: background 0.5s ease, border-color 0.5s ease;
+            font-size: 0.9rem; /* Adjusted font size */
+        }
+
+        .tag-icon {
+            color: var(--personal-accent-light);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Reduced gap for mobile */
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem; /* Adjusted padding */
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        .btn-primary {
+            background: var(--personal-accent-light);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--personal-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--personal-bg-light);
+            border-color: var(--personal-accent-light);
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 2rem auto;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem; /* Adjusted font size for mobile */
+            transition: color 0.5s ease;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-primary);
+            transition: color 0.5s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--personal-accent-light);
+            transition: background 0.5s ease;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--personal-accent-light);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--personal-accent-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            transition: color 0.5s ease;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--text-secondary);
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .skill-list li::before {
+            content: ' ▸ ';
+            position: absolute;
+            left: 0;
+            color: var(--personal-accent-light);
+            transition: color 0.5s ease;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            /* Center the timeline line */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%; /* Keep the line centered initially */
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+            transition: background 0.5s ease;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%; /* Full width for single column */
+            text-align: left; /* Ensure all text is left-aligned */
+            padding-left: 60px; /* Space for the dot and line */
+            box-sizing: border-box;
+        }
+
+        /* Adjust timeline line and dots for single column */
+        .timeline::before {
+            left: 30px; /* Move the line to the left */
+            transform: translateX(0);
+        }
+
+        .timeline-item .timeline-dot {
+            left: 20px; /* Position dot on the left, aligned with the line */
+            right: auto; /* Remove right positioning */
+        }
+
+        .timeline-content {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            border-color: var(--personal-accent-light);
+        }
+
+        .company-name {
+            color: var(--personal-accent-light);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            transition: color 0.5s ease;
+        }
+
+        .job-period {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            transition: color 0.5s ease;
+        }
+
+        .job-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            transition: color 0.5s ease;
+        }
+
+        /* Education Cards */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--personal-accent-light);
+        }
+
+        .degree {
+            color: var(--personal-accent-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .institution {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .grade {
+            font-weight: bold;
+            margin-top: 1rem;
+            color: var(--text-primary);
+            transition: color 0.5s ease;
+        }
+
+        /* Blogs Section */
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--personal-accent-light);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        .blog-title {
+            color: var(--personal-accent-light);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            transition: color 0.5s ease;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.5s ease;
+        }
+
+        /* Recommendations Section */
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .recommendation-card {
+            background: var(--personal-bg-light);
+            border: 2.5px solid var(--border);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease, background 0.15s ease, border-color 0.5s ease;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--personal-accent-light);
+        }
+
+        .recommender-name {
+            font-size: 1.1rem;
+            color: var(--personal-accent-light);
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .recommender-title {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            transition: color 0.5s ease;
+        }
+
+        .recommendation-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            transition: color 0.5s ease;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Reduced gap for mobile */
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--personal-accent-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem; /* Adjusted padding */
+            border: 2.5px solid var(--border); /* Adjusted border thickness */
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem; /* Adjusted font size */
+        }
+
+        .contact-links a:hover {
+            background: var(--personal-accent-light);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.7rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            margin-top: 4rem;
+            transition: color 0.5s ease, border-color 0.5s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 576px) {
+            .nav-links {
+                display: none;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .tags {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="bg-orb orb3"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo">RK</div>
+                <div class="name-title">
+                    <h3>Rajesh Kanna</h3>
+                    <p>Investments & Payroll</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Blogs</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <span class="toggle-label"></span>
+                <div class="toggle-switch" id="theme-toggle-switch">
+                    <div class="toggle-slider"></div>
+                    <div class="toggle-icons">
+                        <span class="toggle-icon sun-icon">☀️</span>
+                        <span class="toggle-icon moon-icon">🌙</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <h1>Hi, I'm <span>Rajesh Kanna RR</span></h1>
+        <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
+        <div class="tags fade-in">
+            <div class="tag">
+                <span class="tag-icon">📍</span>
+                <span>Bangalore, Karnataka</span>
+            </div>
+            <div class="tag">
+                <span class="tag-icon">💼</span>
+                <span>3+ Years Experience</span>
+            </div>
+            <div class="tag">
+                <span class="tag-icon">💰</span>
+                <span>Investments & Payroll Expert</span>
+            </div>
+        </div>
+        <div class="action-buttons fade-in">
+            <a href="mailto:rajeshkannarrr88@gmail.com" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Connect Me
+            </a>
+            <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
+                <i class="fas fa-download"></i> Grab my portfolio
+            </a>
+        </div>
+        <p class="hero-description fade-in">
+            A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements.
+            Passionate markets enthusiast managing a diversified portfolio across equities, mutual funds, US equities, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
+        </p>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section class="section" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Financial Management</h3>
+                <ul class="skill-list">
+                    <li>Portfolio Management</li>
+                    <li>Investment Analysis</li>
+                    <li>Financial Planning</li>
+                    <li>Accounts Payable/Receivable</li>
+                    <li>Bank Reconciliation</li>
+                </ul>
+            </div>    
+            <div class="skill-category">
+                <h3>Payroll & Compliance</h3>
+                <ul class="skill-list">
+                    <li>End-to-End Payroll Processing</li>
+                    <li>Deductions Management</li>
+                    <li>Gratuity & F&F Settlements</li>
+                    <li>Payment processing</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Software Proficiency</h3>
+                <ul class="skill-list">
+                    <li>SAP SuccessFactors HCM</li>
+                    <li>SAP S/4 HANA</li>
+                    <li>Advanced MS Excel & Power Query</li>
+                    <li>Ramco & Formula HR</li>
+                    <li>Tally ERP 9 & Prime</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Core Competencies</h3>
+                <ul class="skill-list">
+                    <li>Strategic Decision-Making</li>
+                    <li>Critical Problem Solving</li>
+                    <li>Cross-functional Collaboration</li>
+                    <li>Process Optimization</li>
+                    <li>Adaptability & Agility</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="company-name">Sundus/Masadir Recruitment</div>
+                    <div class="job-title">Payroll Executive</div>
+                    <div class="job-period">May 2024 - June 2025</div>
+                    <div class="job-description">
+                <li>Manage end-to-end payroll processing, ensuring accurate and timely salary disbursements for over 1,400+ employees each month.
+                <li>Prepare and reconcile payroll reports, including deductions, overtime, bonuses, and other adjustments.
+                <li>Collaborate with the Account Management (AM) team to maintain precise employee records and resolve payroll discrepancies.
+                <li>Address employee inquiries related to payroll professionally and in a timely manner.
+                <li>Stay abreast of UAE labor laws and regulations to ensure full compliance in payroll processes.
+                <li>Partner with HR operations to verify accurate tracking of employee attendance, leaves, and related data.
+                <li>Review and process weekly ad hoc payments and End of Service Benefits (EOSB) calculations.
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="company-name">Techindia Infoway Pvt Ltd</div>
+                    <div class="job-title">Payroll Assistant</div>
+                    <div class="job-period">June 2022 - September 2023</div>
+                    <div class="job-description">
+            <ul class="experience-achievements">
+                <li>Handled the entire payroll processing system from start to finish, ensuring precise record-keeping with the I Formula HR software.
+                <li>Ensured precise and timely disbursement of employee salaries, upholding strict adherence to payment schedules.
+                <li>Proficiently handled the computation and preparation of crucial deductions, including PF, ESIC, PT, and LWF quantifiably optimizing efficiency and accuracy in payroll operations.
+                <li>Closely tracked attendance for a substantial workforce of over 800+ employees using the Formula HR system.
+                <li>Orchestrated the streamlined execution of gratuity and full & final settlements, meticulously adhering to company policies and legal mandates.
+                <li>Applied sophisticated Microsoft Excel formulas to thoroughly validate and analyze attendance reports, ensuring precise data accuracy.
+                <li>Produced detailed payroll reports at regular intervals, serving as crucial records for managerial assessment and strategic decision-making.
+                <li>Demonstrated expertise in creating monthly salary sheets using intricate MS Excel formulas, contributing to efficient payroll execution.
+                <li>Proficiently oversee cash and bank entries, executing precise invoice bookings through the utilization of Tally Prime for seamless and accurate financial recording.   
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <div class="company-name">Agaram Foundation NGO</div>
+                    <div class="job-title">Finance Executive</div>
+                    <div class="job-period">September 2021 - April 2022</div>
+                    <div class="job-description">
+                <li>Proficient in painstakingly preparing bank reconciliation statements to ensure financial accuracy and transparency.
+                <li>Handle payable cash, reimbursements, and expenses with a strong commitment to financial responsibility.
+                <li>Expertly manage end-to-end payroll processing, ensuring accurate and timely payment of employee salaries while adhering to payment schedules.
+                <li>Proficiently oversee accounts payable and receivable, contributing to streamlined and efficient financial operations.
+                <li>Proven ability in creating and managing various financial journal entries for precise accounting.
+                <li>Accurately build up and analyze expense reports, making sure that financial information is presented in a thorough and expert manner.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="degree">Master of Business Administration</div>
+                <div class="institution">Pondicherry University (DDE)</div>
+                <div class="grade">Grade: 60% | Year: 2023</div>
+            </div>
+            <div class="education-card">
+                <div class="degree">Bachelor of Commerce</div>
+                <div class="institution">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</div>
+                <div class="grade">CGPA: 7.7 | Year: 2021</div>
+            </div>
+            <div class="education-card">
+                <div class="degree">Higher Secondary Certificate</div>
+                <div class="institution">Shinehill Academy Matric HSS</div>
+                <div class="grade">Percentage: 87% | Year: 2018</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="section" id="projects">
+        <h2 class="section-title">Featured Blogs</h2>
+        <div class="blogs-grid">
+            <a href="https://www.linkedin.com/pulse/beginners-guide-fundamental-analysis-choosing-right-stocks-rr-5ieec/" target="_blank" class="blog-card">
+                <div class="blog-title">A Beginner's Guide to Fundamental Analysis: Choosing the Right Stocks</div>
+                <div class="blog-date">Published on July 19, 2025</div>
+            </a>
+            <a href="https://www.linkedin.com/pulse/reflecting-my-investment-journey-18-months-growth-learning-rr-eiwcc/" target="_blank" class="blog-card">
+                <div class="blog-title">Reflecting on My Investment Journey: 18 Months of Growth and Learning</div>
+                <div class="blog-date">Published on June 29, 2024</div>
+            </a>
+            <a href="https://www.linkedin.com/pulse/how-am-i-investing-my-16000-salary-rajesh-kanna-rr/" target="_blank" class="blog-card">
+                <div class="blog-title">How am I investing in my 16000 Salary ? </div>
+                <div class="blog-date">Published on March 11, 2023</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="section" id="recommendations">
+        <h2 class="section-title">Recommendations</h2>
+        <div class="recommendations-grid">
+            <div class="recommendation-card">
+                <div class="recommender-name">Annamalai Palani</div>
+                <div class="recommender-title">Senior Product Developer at Lumel</div>
+                <div class="recommendation-text">
+                    I wholeheartedly recommend rajesh to anyone seeking a knowledgeable and trustworthy financial advisor. His commitment to their clients is unparalleled, and I am confident that he will provide the same level of exceptional service to anyone who works with him. Moreover, Rajesh has always demonstrated the highest level of integrity and honesty in his dealings with me. He is attentive to my needs and have consistently provided me with personalised financial solutions that are tailored to my specific goals and objectives.
+                </div>
+            </div>  
+            <div class="recommendation-card">
+                <div class="recommender-name">Kaviya Kirubakaran</div>
+                <div class="recommender-title">AM – Corporate Partnership at Sambhav Foundation</div>
+                <div class="recommendation-text">
+                    Mr. Rajesh worked with me at Agaram Foundation as a Finance Executive, where he consistently showcased strong financial expertise and attention to detail. He efficiently handled complex calculations, collaborated well with Admin and Finance teams, and played a key role in streamlining processes. With his professionalism, reliability, and problem-solving skills, I highly recommend him as a valuable asset for any finance role.
+                </div>
+            </div>     
+            <div class="recommendation-card">
+                <div class="recommender-name">Dinesh Vishwa</div>
+                <div class="recommender-title">Senior Process Executive at Cognizant</div>
+                <div class="recommendation-text">
+                    Heyyyyy!!! my working partner Raj, and it has truly been a great experience. Collaborating with him has not only been enjoyable but also a valuable learning opportunity. Throughout our time together, we've shared a lot of insights, especially in our core finance work. Raj consistently brought clarity and depth to every discussion. I also had the chance to go through his LinkedIn articles—they reflect his knowledge and passion for the field, and I genuinely appreciated the way he shares that knowledge so openly. Thank you, Raj, for the great teamwork and the time we spent learning and growing together. Wishing you continued success ahead!
+                </div>
+            </div>
+            <div class="recommendation-card">
+                <div class="recommender-name">Gowtham Raj</div>
+                <div class="recommender-title">SAP Functional Consultant</div>
+                <div class="recommendation-text">
+                    Rajesh isn’t just a school friend he is like a brother to me. I’ve known him since our school days, and his unwavering commitment to ethics and natural leadership have consistently inspired me. He leads by example, communicates with clarity, and brings people together around shared goals. In challenging moments, he checks in, offers perspective, and motivates me to stay positive. I wholeheartedly recommend Rajesh for any role that values integrity, ownership, and people-first leadership.
+                </div>
+            </div>    
+            <div class="recommendation-card">
+                <div class="recommender-name">Keerthy T</div>
+                <div class="recommender-title">Senior Payroll Specialist at Sundus</div>
+                <div class="recommendation-text">
+                    He consistently gave 100% to our team and was critical in ensuring the completion of works by the deadline. Rajesh’s work ethic was impeccable and he was always the first person to offer help and support.
+                </div>
+             </div>    
+            <div class="recommendation-card">
+                <div class="recommender-name">Shahala Sherin E</div>
+                <div class="recommender-title">Accounts Payable - Payroll at Sundus</div>
+                <div class="recommendation-text">
+                    Rajesh Kanna is highly skilled, professional, and collaborative. He consistently supports his team and handles sensitive client matters with empathy and precision. Even under pressure, he ensures payroll processes are accurate and timely. Rajesh is a valuable team asset.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <p class="hero-description fade-in">
+                I’m open to connecting about investment strategies, payroll management, and finance operations. Feel free to get in touch to discuss new opportunities or collaborations.
+            </p>
+            <div class="contact-links fade-in">
+                <a href="mailto:rajeshkannarrr88@gmail.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+919003618788">
+                    <i class="fas fa-phone-alt"></i> +91 9003618788
+                </a>
+                <a href="https://www.linkedin.com/in/rajesh-kanna-rr-97b4961a4/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://rajeshkannarr.medium.com/" target="_blank">
+                    <i class="fab fa-medium"></i> Medium
+                </a>
+                <a href="https://github.com/rajeshkannarr" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rajesh Kanna RR. All rights reserved.</p>
+        <p>Designed by RK</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.skill-category, .timeline-item, .education-card, .blog-card, .recommendation-card').forEach(el => {
+            observer.observe(el);
+        });
+
+    // Theme Toggle logic
+        const toggleSwitch = document.getElementById('theme-toggle-switch');
+        const toggleLabel = document.querySelector('.toggle-label');
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        toggleSwitch.classList.remove('active');
+        toggleLabel.textContent = '';
+        } else {
+        document.body.classList.remove('light-mode');
+        toggleSwitch.classList.add('active');
+        toggleLabel.textContent = '';
+        }
+    }
+
+    function toggleTheme() {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'light') {
+        applyTheme('dark');
+        localStorage.setItem('theme', 'dark');
+        } else {
+        applyTheme('light');
+        localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Apply saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
+        toggleSwitch.addEventListener('click', toggleTheme);
+    });
+    </script>
+</body>
+</html>
