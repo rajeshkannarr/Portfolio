@@ -42,6 +42,7 @@
             --text-secondary: #666666;
             --card-bg: rgba(255, 255, 255, 0.9);
             --border: rgba(26, 115, 232, 0.2);
+            --contact-text:#000000;
 
         /* Personal Webpage Colors (Light Mode) */
             --personal-bg-light: rgba(255, 255, 255, 0.9);
@@ -49,6 +50,7 @@
             --personal-accent-light: #4CAF50;
             --personal-accent-dark: #388E3C;
             --personal-text-highlight: #FFC107;
+            --personal-text:#000000;
         }
 
     body {
@@ -138,18 +140,24 @@
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
-            background: var(--personal-accent-light);
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.4rem;
-            color: white;
-            transition: background 0.5s ease;
-        }
+    width: 50px;
+    height: 50px;
+    /* background: var(--personal-accent-light); /* Keep or remove based on desired background behind image */
+    border-radius: 100%;
+    display: flex; /* Keep for centering if needed, or remove if image fills */
+    align-items: center; /* Keep for centering if needed */
+    justify-content: center; /* Keep for centering if needed */
+    /* Remove font-weight, font-size, color as they apply to text, not image */
+    transition: background 0.5s ease;
+    overflow: hidden; /* Ensures image respects border-radius */
+}
+
+.logo-image {
+    width: 100%; /* Make the image fill the logo div's width */
+    height: 100%; /* Make the image fill the logo div's height */
+    object-fit: cover; /* Ensures the image covers the area without distortion, cropping if necessary */
+    border-radius: 100%; /* Apply border-radius to the image itself for a circular shape */
+}
 
         .name-title h3 {
             font-size: 1.3rem;
@@ -352,7 +360,7 @@
         /* Container to center the nav links box, responsive for mobile devices */
         .nav-links {
                 position: fixed;
-                top: auto;
+                top: 50%;
                 left: auto;
                 transform: translate(-50%, -50%);
                 display: flex;
@@ -952,7 +960,8 @@
         }
 
         .contact-links a {
-            color: var(--personal-accent-light);
+            color: var(--personal-text-black);
+            font-weight: 500;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -1026,12 +1035,14 @@
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-                <div class="logo">RK</div>
-                <div class="name-title">
-                    <h3>Rajesh Kanna</h3>
-                    <p>Investments & Payroll</p>
-                </div>
-            </div>
+            <div class="logo">
+            <img src="B75D475C-FF61-49CD-99B5-C8B14FAB6F72.jpeg" alt="Rajesh Kanna Logo" class="logo-image">
+         </div>
+            <div class="name-title">
+            <h3>Rajesh Kanna</h3>
+            <p>Investments & Payroll</p>
+    </div>
+</div>
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">About</a></li>
@@ -1495,4 +1506,3 @@
     </script>
 </body>
 </html>
-
