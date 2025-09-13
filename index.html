@@ -15,21 +15,21 @@
 
        /* Dark Mode Variables (Default) */
         :root {
-    --bg-primary: #0a0e27;
-    --bg-secondary: #151933;
-    --accent: #6366f1;
-    --accent-hover: #818cf8;
-    --text-primary: #ffffff;
-    --text-secondary: #94a3b8;
-    --card-bg: rgba(30, 41, 59, 0.5);
-    --border: rgba(99, 102, 241, 0.2);
+            --bg-primary: #0a0e27;
+            --bg-secondary: #151933;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --border: rgba(99, 102, 241, 0.2);
 
-    /* Personal Webpage Colors (Dark Mode) */
-    --personal-bg-light: rgba(25, 35, 50, 0.7);
-    --personal-bg-dark: rgba(15, 20, 30, 0.9);
-    --personal-accent-light: #4CAF50;
-    --personal-accent-dark: #388E3C;
-    --personal-text-highlight: #FFD700;
+        /* Personal Webpage Colors (Dark Mode) */
+            --personal-bg-light: rgba(25, 35, 50, 0.7);
+            --personal-bg-dark: rgba(15, 20, 30, 0.9);
+            --personal-accent-light: #4CAF50;
+            --personal-accent-dark: #388E3C;
+            --personal-text-highlight: #FFD700;
         }
 
         /* Light Mode Variables */
@@ -63,8 +63,8 @@
         }
 
             body.light-mode {
-    background: linear-gradient(135deg, #e0f7e9 0%, #a8d5a3 50%, #d0f0c0 100%);
-    color: var(--text-primary);
+            background: linear-gradient(135deg, #e0f7e9 0%, #a8d5a3 50%, #d0f0c0 100%);
+            color: var(--text-primary);
         }
 
         /* Animated background orbs */
@@ -349,67 +349,67 @@
                 margin-bottom: 0;
             }
 
-            /* Container to center the nav links box, responsive for mobile devices */
-.nav-links {
-  position: fixed;
-  top: 50%;
-  left: auto;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 90vw;    /* Responsive width based on viewport width */
-  max-width: 250px; /* Max width to keep it neat on larger screens */
-  padding: 12px;
-  background: transparent; /* Or your desired background color */
-  max-height: 80vh;
-  overflow-y: auto;
-  box-sizing: border-box; /* To include padding within width */
-  border-radius: 12px; /* optional: softer rounded edges */
-  z-index: 1000; /* ensure it's above other content */
-}
+        /* Container to center the nav links box, responsive for mobile devices */
+        .nav-links {
+                position: fixed;
+                top: 50%;
+                left: auto;
+                transform: translate(-50%, -50%);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 90vw;
+                max-width: 250px;
+                padding: 12px;
+                background: transparent; /* Or your desired background color */
+                max-height: 80vh;
+                overflow-y: auto;
+                box-sizing: border-box; /* To include padding within width */
+                border-radius: 12px; /* optional: softer rounded edges */
+                z-index: 1000; /* ensure it's above other content */
+            }
 
-/* Individual link styles */
-.nav-links a {
-  display: block;
-  width: 100%;
-  padding: 14px 24px;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 1rem; /* readable font size */
-  font-weight: 500;
-  background: var(--personal-bg-light);
-  border: 2.5px solid var(--border);
-  margin: 0;
-  box-sizing: border-box;
-  color: inherit; /* inherit text color */
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  white-space: nowrap; /* prevent text from wrapping */
-  overflow: hidden;    /* hide overflow if any */
-  text-overflow: ellipsis; /* show ellipsis if text too long */
-}
+        /* Individual link styles */
+        .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 14px 24px;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 1rem; /* readable font size */
+                font-weight: 500;
+                background: var(--personal-bg-light);
+                border: 2.5px solid var(--border);
+                margin: 0;
+                box-sizing: border-box;
+                color: inherit; /* inherit text color */
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+                white-space: nowrap; /* prevent text from wrapping */
+                overflow: hidden;    /* hide overflow if any */
+                text-overflow: ellipsis; /* show ellipsis if text too long */
+            }
 
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: var(--personal-bg-dark);
-  color: var(--accent-color);
-}
+        .nav-links a:hover,
+        .nav-links a:focus {
+                background-color: var(--personal-bg-dark);
+                color: var(--accent-color);
+            }
 
-/* Optional: Media queries for extra safety */
-@media (max-width: 400px) {
-  .nav-links {
-    width: 95vw;
-    padding: 10px;
-    gap: 10px;
-  }
+        /* Optional: Media queries for extra safety */
+            @media (max-width: 400px) {
+            .nav-links {
+                width: 95vw;
+                padding: 10px;
+                gap: 10px;
+            }     
   
-  .nav-links a {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-}
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            }
 
             .nav-links a.active {
                 background: var(--personal-accent-light);
@@ -1495,3 +1495,4 @@
     </script>
 </body>
 </html>
+
