@@ -14,60 +14,58 @@
         }
 
        /* Dark Mode Variables (Default) */
-:root {
+        :root {
     --bg-primary: #0a0e27;
     --bg-secondary: #151933;
-    --accent: #6366f1; /* Original accent, not used for personal colors */
-    --accent-hover: #818cf8; /* Original accent, not used for personal colors */
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
     --text-primary: #ffffff;
     --text-secondary: #94a3b8;
     --card-bg: rgba(30, 41, 59, 0.5);
     --border: rgba(99, 102, 241, 0.2);
 
     /* Personal Webpage Colors (Dark Mode) */
-    --personal-bg-light: rgba(25, 35, 50, 0.7); /* Slightly lighter dark for cards */
-    --personal-bg-dark: rgba(15, 20, 30, 0.9); /* Deeper dark for nav */
-    --personal-accent-light: #4CAF50; /* A vibrant green */
-    --personal-accent-dark: #388E3C; /* A darker green for hover */
-    --personal-text-highlight: #FFD700; /* Gold for special text */
-}
+    --personal-bg-light: rgba(25, 35, 50, 0.7);
+    --personal-bg-dark: rgba(15, 20, 30, 0.9);
+    --personal-accent-light: #4CAF50;
+    --personal-accent-dark: #388E3C;
+    --personal-text-highlight: #FFD700;
+        }
 
-/* Light Mode Variables */
-body.light-mode {
-    --bg-primary: #f0f2f5;
-    --bg-secondary: #ffffff;
-    --accent: #1a73e8; /* Original accent, not used for personal colors */
-    --accent-hover: #4285f4; /* Original accent, not used for personal colors */
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --border: rgba(26, 115, 232, 0.2);
+        /* Light Mode Variables */
+        body.light-mode {
+            --bg-primary: #f0f2f5;
+            --bg-secondary: #ffffff;
+            --accent: #1a73e8;
+            --accent-hover: #4285f4;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --border: rgba(26, 115, 232, 0.2);
 
-    /* Personal Webpage Colors (Light Mode) - Now also green */
-    --personal-bg-light: rgba(255, 255, 255, 0.9);
-    --personal-bg-dark: rgba(240, 242, 245, 0.9);
-    --personal-accent-light: #4CAF50; /* Keep vibrant green for light mode */
-    --personal-accent-dark: #388E3C; /* Keep darker green for hover */
-    --personal-text-highlight: #FFC107; /* Amber for special text */
-}
+        /* Personal Webpage Colors (Light Mode) */
+            --personal-bg-light: rgba(255, 255, 255, 0.9);
+            --personal-bg-dark: rgba(240, 242, 245, 0.9);
+            --personal-accent-light: #4CAF50;
+            --personal-accent-dark: #388E3C;
+            --personal-text-highlight: #FFC107;
+        }
 
-body {
+    body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
         'Helvetica Neue', Arial, sans-serif;
-    /* Unique background gradient for dark mode */
-    background: linear-gradient(120deg, #0a0e27 0%, #1f2a57 40%, #151933 75%, #0a0e27 100%);
-    color: var(--text-primary);
-    min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-    transition: background 0.5s ease, color 0.5s ease;
-}
+            background: linear-gradient(120deg, #0a0e27 0%, #1f2a57 40%, #151933 75%, #0a0e27 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
 
-body.light-mode {
-    /* Unique background gradient for light mode */
+            body.light-mode {
     background: linear-gradient(135deg, #e0f7e9 0%, #a8d5a3 50%, #d0f0c0 100%);
     color: var(--text-primary);
-}
+        }
 
         /* Animated background orbs */
         .bg-orb {
@@ -90,7 +88,7 @@ body.light-mode {
         .orb2 {
             width: 300px;
             height: 300px;
-            background: #FF6347; /* Tomato red for contrast */
+            background: #FF6347;
             bottom: -150px;
             left: -100px;
             animation-delay: -5s;
@@ -99,7 +97,7 @@ body.light-mode {
         .orb3 {
             width: 350px;
             height: 350px;
-            background: #8A2BE2; /* Blue Violet for another contrast */
+            background: #8A2BE2;
             top: 50%;
             right: 10%;
             animation-delay: -10s;
@@ -129,13 +127,14 @@ body.light-mode {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 0.5rem;
+            padding: 0 1rem;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
             gap: 1rem;
+            flex-shrink: 0;
         }
 
         .logo {
@@ -148,11 +147,12 @@ body.light-mode {
             justify-content: center;
             font-weight: bold;
             font-size: 1.4rem;
+            color: white;
             transition: background 0.5s ease;
         }
 
         .name-title h3 {
-            font-size: 1.3  rem;
+            font-size: 1.3rem;
             margin-bottom: 0.2rem;
             color: var(--text-primary);
             transition: color 0.5s ease;
@@ -168,6 +168,8 @@ body.light-mode {
             display: flex;
             gap: 1.7rem;
             list-style: none;
+            justify-content: center;
+            flex-grow: 1;
         }
 
         .nav-links a {
@@ -176,18 +178,21 @@ body.light-mode {
             padding: 0.5rem 1rem;
             border-radius: 20px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .nav-links a:hover, .nav-links a.active {
             background: var(--personal-accent-light);
-            color: var(--text-primary);
+            color: white;
+            transform: translateY(-1px);
         }
 
         /* Theme Toggle Switch */
         .theme-toggle {
             display: flex;
-            align-items: left;
+            align-items: center;
             gap: 0.75rem;
+            flex-shrink: 0;
         }
 
         .toggle-switch {
@@ -263,11 +268,181 @@ body.light-mode {
             opacity: 0.3;
         }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-primary);
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            order: 3;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+                height: 70px;
+            }
+
+            .logo-section .name-title {
+                display: none;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--personal-bg-dark);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid var(--border);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                justify-content: flex-start;
+            }
+
+            .nav-links.mobile-open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-links li:last-child {
+                margin-bottom: 0;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 18px 24px;
+                border-radius: 12px;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 500;
+                background: var(--personal-bg-light);
+                border: 1px solid var(--border);
+                margin: 0;
+            }
+
+            .nav-links a.active {
+                background: var(--personal-accent-light);
+                border-color: var(--personal-accent-light);
+                color: white;
+            }
+
+            .nav-links a:hover {
+                background: var(--personal-accent-light);
+                color: white;
+                transform: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .theme-toggle {
+                order: 2;
+            }
+
+            .toggle-switch {
+                width: 55px;
+                height: 28px;
+            }
+
+            .toggle-slider {
+                width: 22px;
+                height: 22px;
+            }
+
+            .toggle-switch.active .toggle-slider {
+                transform: translateX(25px);
+            }
+
+            .toggle-icon {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 0.8rem;
+                height: 65px;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                top: 65px;
+                padding: 1rem;
+            }
+
+            .nav-links a {
+                padding: 15px 20px;
+                font-size: 0.95rem;
+            }
+
+            .toggle-switch {
+                width: 50px;
+                height: 25px;
+            }
+
+            .toggle-slider {
+                width: 19px;
+                height: 19px;
+            }
+
+            .toggle-switch.active .toggle-slider {
+                transform: translateX(23px);
+            }
+        }
+
         /* Hero Section */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 1rem; /* Adjusted padding for mobile */
+            padding: 5rem 2rem;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -293,7 +468,7 @@ body.light-mode {
         .tags {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* Reduced gap for mobile */
+            gap: 1rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
         }
@@ -301,14 +476,14 @@ body.light-mode {
         .tag {
             background: var(--personal-bg-light);
             border: 2.5px solid var(--border);
-            padding: 0.6rem 1.2rem; /* Adjusted padding */
+            padding: 0.6rem 1.2rem;
             border-radius: 30px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             backdrop-filter: blur(10px);
             transition: background 0.5s ease, border-color 0.5s ease;
-            font-size: 0.9rem; /* Adjusted font size */
+            font-size: 0.9rem;
         }
 
         .tag-icon {
@@ -318,13 +493,13 @@ body.light-mode {
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* Reduced gap for mobile */
+            gap: 1rem;
             margin-top: 3rem;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 0.8rem 1.5rem; /* Adjusted padding */
+            padding: 0.8rem 1.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
@@ -333,7 +508,7 @@ body.light-mode {
             gap: 0.5rem;
             transition: all 0.3s ease;
             border: 2px solid transparent;
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -363,8 +538,66 @@ body.light-mode {
             margin: 2rem auto;
             color: var(--text-secondary);
             line-height: 1.8;
-            font-size: 1rem; /* Adjusted font size for mobile */
+            font-size: 1rem;
             transition: color 0.5s ease;
+        }
+
+        /* Mobile Responsive for Hero */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p.subtitle {
+                font-size: 1.1rem;
+            }
+
+            .tags {
+                gap: 0.8rem;
+            }
+
+            .tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .action-buttons {
+                gap: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.3rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p.subtitle {
+                font-size: 1rem;
+            }
+
+            .tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.1rem;
+                font-size: 0.85rem;
+            }
         }
 
         /* Section Styles */
@@ -664,7 +897,7 @@ body.light-mode {
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* Reduced gap for mobile */
+            gap: 1rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
@@ -675,11 +908,11 @@ body.light-mode {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.6rem 1.2rem; /* Adjusted padding */
-            border: 2.5px solid var(--border); /* Adjusted border thickness */
+            padding: 0.6rem 1.2rem;
+            border: 2.5px solid var(--border);
             border-radius: 20px;
             transition: all 0.3s ease;
-            font-size: 0.95rem; /* Adjusted font size */
+            font-size: 0.95rem;
         }
 
         .contact-links a:hover {
@@ -698,33 +931,38 @@ body.light-mode {
             transition: color 0.5s ease, border-color 0.5s ease;
         }
 
-        /* Responsive */
-        @media (max-width: 576px) {
-            .nav-links {
-                display: none;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
-                text-align: left !important;
-            }
-
-            .timeline-dot {
-                left: 20px !important;
-                right: auto !important;
-            }
-
-            .tags {
-                gap: 1rem;
+        /* Mobile Responsive for Sections */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1rem;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .contact-links {
+                gap: 0.8rem;
+            }
+
+            .contact-links a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 2rem 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .contact-links a {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -745,7 +983,8 @@ body.light-mode {
                     <p>Investments & Payroll</p>
                 </div>
             </div>
-            <ul class="nav-links">
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -754,6 +993,7 @@ body.light-mode {
                 <li><a href="#recommendations">Recommendations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            
             <div class="theme-toggle">
                 <span class="toggle-label"></span>
                 <div class="toggle-switch" id="theme-toggle-switch">
@@ -761,8 +1001,11 @@ body.light-mode {
                     <div class="toggle-icons">
                         <span class="toggle-icon sun-icon">☀️</span>
                         <span class="toggle-icon moon-icon">🌙</span>
+                    </div>
                 </div>
             </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
@@ -794,7 +1037,7 @@ body.light-mode {
         </div>
         <p class="hero-description fade-in">
             A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements.
-            Passionate markets enthusiast managing a diversified portfolio across Indian & Us Equities, Mutual funds, Bonds and gold's. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
+            Passionate markets enthusiast managing a diversified portfolio across equities, mutual funds, US equities, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
         </p>
     </section>
 
@@ -999,7 +1242,7 @@ body.light-mode {
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
             <p class="hero-description fade-in">
-                I’m open to connecting about investment strategies, payroll management, and finance operations. Feel free to get in touch to discuss new opportunities or collaborations.
+                I'm open to connecting about investment strategies, payroll management, and finance operations. Feel free to get in touch to discuss new opportunities or collaborations.
             </p>
             <div class="contact-links fade-in">
                 <a href="mailto:rajeshkannarrr88@gmail.com">
@@ -1086,32 +1329,32 @@ body.light-mode {
             observer.observe(el);
         });
 
-    // Theme Toggle logic
+        // Theme Toggle logic
         const toggleSwitch = document.getElementById('theme-toggle-switch');
         const toggleLabel = document.querySelector('.toggle-label');
 
-    function applyTheme(theme) {
-        if (theme === 'light') {
-        document.body.classList.add('light-mode');
-        toggleSwitch.classList.remove('active');
-        toggleLabel.textContent = '';
-        } else {
-        document.body.classList.remove('light-mode');
-        toggleSwitch.classList.add('active');
-        toggleLabel.textContent = '';
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                toggleSwitch.classList.remove('active');
+                toggleLabel.textContent = '';
+            } else {
+                document.body.classList.remove('light-mode');
+                toggleSwitch.classList.add('active');
+                toggleLabel.textContent = '';
+            }
         }
-    }
 
-    function toggleTheme() {
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'light') {
-        applyTheme('dark');
-        localStorage.setItem('theme', 'dark');
-        } else {
-        applyTheme('light');
-        localStorage.setItem('theme', 'light');
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'light') {
+                applyTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                applyTheme('light');
+                localStorage.setItem('theme', 'light');
+            }
         }
-    }
 
     // Apply saved theme on page load
         document.addEventListener('DOMContentLoaded', () => {
@@ -1119,6 +1362,87 @@ body.light-mode {
         applyTheme(savedTheme);
         toggleSwitch.addEventListener('click', toggleTheme);
     });
+
+    // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+        });
+
+        // Active link functionality
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu when clicking on a link
+                navLinks.classList.remove('mobile-open');
+                mobileMenuBtn.innerHTML = '☰';
+                
+                // Smooth scroll to section
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                navLinks.classList.remove('mobile-open');
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('mobile-open');
+                mobileMenuBtn.innerHTML = '☰';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
