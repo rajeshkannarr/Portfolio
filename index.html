@@ -349,20 +349,37 @@
                 margin-bottom: 0;
             }
 
-            .nav-links a {
-                display: block;
-                width: 250px;
-                padding: 8px 12px;
-                border-radius: 100px;
-                text-align: center;
-                font-size: 0.1rem;
-                font-weight: 500;
-                background: var(--personal-bg-light);
-                border: 2.5px solid var(--border);
-                margin: 0;
-                box-sizing: center-box;
-                align-items: center;
-            }
+            /* Container to center the nav links box */
+.nav-links {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 220px; /* fixed width for consistency */
+  padding: 12px;
+  background: transparent; /* or your desired background color */
+}
+/* Individual link styles */
+.nav-links a {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1rem; /* readable font size */
+  font-weight: 500;
+  background: var(--personal-bg-light);
+  border: 2.5px solid var(--border);
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit; /* inherit text color */
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
             .nav-links a.active {
                 background: var(--personal-accent-light);
