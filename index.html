@@ -350,8 +350,11 @@
             }
 
             .nav-links a {
-                display: inline-block; /* inline-block shrinks to content */
-                padding: 6px 10px;
+                display: inline-block;
+                width: 120px;
+                height: 36px;
+                line-height: 36px; 
+                padding: 0;
                 border-radius: 20px;
                 text-align: center;
                 font-size: 0.75rem;
@@ -360,6 +363,7 @@
                 border: 1px solid var(--border);
                 margin: 0;
                 box-sizing: border-box;
+                white-space: nowrap;
             }
 
             .nav-links a.active {
