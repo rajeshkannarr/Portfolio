@@ -349,38 +349,67 @@
                 margin-bottom: 0;
             }
 
-            /* Container to center the nav links box */
-            .nav-links {
-                  position: fixed;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  display: flex;
-                  flex-direction: column;
-                  gap: 12px;
-                  width: 250px; /* fixed width for consistency */
-                  padding: 12px;
-                  background: transparent; /* or your desired background color */
-            }
-            
-            /* Individual link styles */
-            .nav-links a {
-                  display: block;
-                  width: 100%;
-                  padding: 8px 24px;
-                  border-radius: 50px;
-                  text-align: center;
-                  font-size: 1rem; /* readable font size */
-                  font-weight: 500;
-                  background: var(--personal-bg-light);
-                  border: 2.5px solid var(--border);
-                  margin: 0;
-                  box-sizing: border-box;
-                  color: inherit; /* inherit text color */
-                  text-decoration: none;
-                  cursor: pointer;
-                  transition: background-color 0.3s ease, color 0.3s ease;
-            }
+            /* Container to center the nav links box, responsive for mobile devices */
+.nav-links {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 90vw;    /* Responsive width based on viewport width */
+  max-width: 320px; /* Max width to keep it neat on larger screens */
+  padding: 12px;
+  background: transparent; /* Or your desired background color */
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box; /* To include padding within width */
+  border-radius: 12px; /* optional: softer rounded edges */
+  z-index: 1000; /* ensure it's above other content */
+}
+
+/* Individual link styles */
+.nav-links a {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1rem; /* readable font size */
+  font-weight: 500;
+  background: var(--personal-bg-light);
+  border: 2.5px solid var(--border);
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit; /* inherit text color */
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* prevent text from wrapping */
+  overflow: hidden;    /* hide overflow if any */
+  text-overflow: ellipsis; /* show ellipsis if text too long */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: var(--personal-bg-dark);
+  color: var(--accent-color);
+}
+
+/* Optional: Media queries for extra safety */
+@media (max-width: 400px) {
+  .nav-links {
+    width: 95vw;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+}
 
             .nav-links a.active {
                 background: var(--personal-accent-light);
