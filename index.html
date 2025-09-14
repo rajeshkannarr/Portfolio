@@ -1391,7 +1391,7 @@
     <script>
 
         // Typing Animation Function
-function typeWriter(text, elementId, speed = 100, callback) {
+function typeWriter(text, elementId, speed = 300, callback) {
     const element = document.getElementById(elementId);
     let i = 0;
     element.innerHTML = '';
@@ -1433,19 +1433,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Ensure elements exist before starting animation
     if (typingText && cursor) {
-        // Start typing animation after a short delay
-        setTimeout(() => {
-            typeWriter("Hi, I'm ", 'typingText', 100, () => {
-                // After typing "Hi, I'm ", add the colored name (no slash after name)
-                typingText.innerHTML += '<span style="color: var(--personal-accent-light);">Rajesh Kanna RR</span>';
-                
-                // Hide cursor after typing is complete
+    setTimeout(() => {
+        typeWriter("Hi, I'm ", 'typingText', 200, () => {
+            typeWriterWithColor("Rajesh Kanna RR", 'typingText', 200, 'var(--personal-accent-light)', () => {
                 setTimeout(() => {
                     cursor.style.display = 'none';
                 }, 1500);
             });
-        }, 500);
+        });
+    }, 500);
+}
+
+function typeWriterWithColor(text, elementId, delay, color, callback) {
+    const element = document.getElementById(elementId);
+    let i = 0;
+    const span = document.createElement('span');
+    span.style.color = color;
+    element.appendChild(span);
+    
+    function typing() {
+        if (i < text.length) {
+            span.textContent += text.charAt(i);
+            i++;
+            setTimeout(typing, delay);
+        } else {
+            if (callback) callback();
+        }
     }
+    typing();
+}
+
 });
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
