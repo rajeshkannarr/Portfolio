@@ -514,6 +514,36 @@
             line-height: 1.2;
         }
 
+        /* Typing Animation Styles */
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            min-height: 4.2rem; /* Prevent layout shift during typing */
+        }
+
+        .typing-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .typing-text {
+            opacity: 1; /* Change from 0 to 1 */
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: var(--personal-accent-light);
+            width: 3px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
         .hero h1 span {
             color: var(--personal-accent-light);
         }
@@ -621,61 +651,62 @@
 
         /* Mobile Responsive for Hero */
         @media (max-width: 768px) {
-            .hero {
-                padding: 3rem 1rem;
-            }
+        .hero {
+            padding: 3rem 1rem;
+        }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        .hero h1 {
+            font-size: 2.5rem;
+            min-height: 3rem;
+        }   
 
-            .hero p.subtitle {
-                font-size: 1.1rem;
-            }
+        .hero p.subtitle {
+            font-size: 1.1rem;
+        }
 
-            .tags {
-                gap: 0.8rem;
-            }
+        .tags {
+            gap: 0.8rem;
+        }
 
-            .tag {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-                width: auto;
-            }
+        .tag {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
 
-            .action-buttons {
-                gap: 0.8rem;
-            }
+        .action-buttons {
+            gap: 0.8rem;
+        }
 
-            .btn {
-                padding: 0.7rem 1.3rem;
-                font-size: 0.9rem;
-            }
+        .btn {
+            padding: 0.7rem 1.3rem;
+            font-size: 0.9rem;
+        }
 
-            .hero-description {
-                font-size: 0.9rem;
-                line-height: 1.7;
-            }
+        .hero-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+        .hero h1 {
+            font-size: 2rem;
+            min-height: 2.4rem;
+        }
 
-            .hero p.subtitle {
-                font-size: 1rem;
-            }
+        .hero p.subtitle {
+            font-size: 1rem;
+        }
 
-            .tag {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
+        .tag {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+        }
 
-            .btn {
-                padding: 0.6rem 1.1rem;
-                font-size: 0.85rem;
-            }
+        .btn {
+            padding: 0.6rem 1.1rem;
+            font-size: 0.85rem;
+        }
         }
 
         /* Section Styles */
@@ -1056,12 +1087,12 @@
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-    <div class="logo">
-        <img src="Rajesh kanna.jpg" alt="Rajesh Kanna Logo" class="logo-image">
+            <div class="logo">
+            <img src="Rajesh kanna.jpg" alt="Rajesh Kanna Logo" class="logo-image">
     </div>
     <div class="name-title">
-        <h3>Rajesh Kanna</h3>
-        <p>Investments & Payroll</p>
+            <h3>Rajesh Kanna</h3>
+            <p>Investments & Payroll</p>
     </div>
 </div>
             
@@ -1092,10 +1123,15 @@
 
     <!-- Hero Section -->
     <section class="hero" id="about">
-        <h1>Hi, I'm <span>Rajesh Kanna RR</span></h1>
+        <h1>
+    <div class="typing-container">
+        <span id="typingText" class="typing-text"></span>
+        <span id="cursor" class="cursor"></span>
+    </div>
+</h1>
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
         <div class="tag-cards fade-in">
-    <div class="tag-card">
+    <div class="tag-card">  
         <i class="fas fa-map-marker-alt"></i>
         <h4>Bangalore, Karnataka</h4>
     </div>
@@ -1353,6 +1389,64 @@
     </footer>
 
     <script>
+
+        // Typing Animation Function
+function typeWriter(text, elementId, speed = 100, callback) {
+    const element = document.getElementById(elementId);
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else if (callback) {
+            callback();
+        }
+    }
+    type();
+}
+
+// Typing Animation Function (keep this as is)
+function typeWriter(text, elementId, speed = 100, callback) {
+    const element = document.getElementById(elementId);
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else if (callback) {
+            callback();
+        }
+    }
+    type();
+}
+
+// Updated DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    const typingText = document.getElementById('typingText');
+    const cursor = document.getElementById('cursor');
+
+    // Ensure elements exist before starting animation
+    if (typingText && cursor) {
+        // Start typing animation after a short delay
+        setTimeout(() => {
+            typeWriter("Hi, I'm ", 'typingText', 100, () => {
+                // After typing "Hi, I'm ", add the colored name (no slash after name)
+                typingText.innerHTML += '<span style="color: var(--personal-accent-light);">Rajesh Kanna RR</span>';
+                
+                // Hide cursor after typing is complete
+                setTimeout(() => {
+                    cursor.style.display = 'none';
+                }, 1500);
+            });
+        }, 500);
+    }
+});
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
