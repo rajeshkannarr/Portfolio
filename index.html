@@ -524,25 +524,43 @@
             margin-bottom: 2rem;
         }
 
-        .tags {
+        .tag-cards {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
         }
 
-        .tag {
+        .tag-card {
             background: var(--personal-bg-light);
             border: 2.5px solid var(--border);
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            backdrop-filter: blur(10px);
-            transition: background 0.5s ease, border-color 0.5s ease;
-            font-size: 0.9rem;
+            padding: 1rem 0.1rem;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1 1 250px;
+            max-width: 500px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tag-card i {
+            font-size: 1rem;
+            color: var(--personal-accent-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .tag-card h4 {
+            font-size: 1rem;
+            font-weight: normal;
+            color: var(--text-primary);
+        }
+
+        .tag-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--personal-accent-light);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.25);
         }
 
         .tag-icon {
@@ -1075,28 +1093,29 @@
     <section class="hero" id="about">
         <h1>Hi, I'm <span>Rajesh Kanna RR</span></h1>
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
-        <div class="tags fade-in">
-            <div class="tag">
-                <span class="tag-icon">📍</span>
-                <span>Bangalore, Karnataka</span>
-            </div>
-            <div class="tag">
-                <span class="tag-icon">💼</span>
-                <span>3+ Years Experience</span>
-            </div>
-            <div class="tag">
-                <span class="tag-icon">💰</span>
-                <span>Investments & Payroll Expert</span>
-            </div>
-        </div>
-        <div class="action-buttons fade-in">
-            <a href="mailto:rajeshkannarrr88@gmail.com" class="btn btn-primary">
-                <i class="fas fa-envelope"></i> Connect Me
-            </a>
-            <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
-                <i class="fas fa-download"></i> Grab my portfolio
-            </a>
-        </div>
+        <div class="tag-cards fade-in">
+    <div class="tag-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Bangalore, Karnataka</h4>
+    </div>
+    <div class="tag-card">
+        <i class="fas fa-briefcase"></i>
+        <h4>3+ Years Experience</h4>
+    </div>
+    <div class="tag-card">
+        <i class="fas fa-coins"></i>
+        <h4>Investments & Payroll Expert</h4>
+    </div>
+</div>
+
+<div class="action-buttons fade-in">
+    <a href="mailto:rajeshkannarrr88@gmail.com" class="btn btn-primary">
+        <i class="fas fa-envelope"></i> Connect Me
+    </a>
+    <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
+        <i class="fas fa-file-pdf"></i> Grab My Portfolio
+    </a>
+</div>
         <p class="hero-description fade-in">
             A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements.
             Passionate markets enthusiast managing a diversified portfolio across equities, mutual funds, US equities, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
