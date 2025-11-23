@@ -6,14 +6,12 @@
     <title>Rajesh Kanna RR - Payroll & Finance Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Base Styles & Variables */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-       /* Dark Mode Variables (Default) */
         :root {
             --bg-primary: #0a0e27;
             --bg-secondary: #151933;
@@ -23,8 +21,6 @@
             --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.5);
             --border: rgba(99, 102, 241, 0.2);
-
-        /* Personal Webpage Colors (Dark Mode) */
             --personal-bg-light: rgba(25, 35, 50, 0.7);
             --personal-bg-dark: rgba(15, 20, 30, 0.9);
             --personal-accent-light: #4CAF50;
@@ -32,7 +28,6 @@
             --personal-text-highlight: #FFD700;
         }
 
-        /* Light Mode Variables */
         body.light-mode {
             --bg-primary: #f0f2f5;
             --bg-secondary: #ffffff;
@@ -42,20 +37,15 @@
             --text-secondary: #666666;
             --card-bg: rgba(255, 255, 255, 0.9);
             --border: rgba(26, 115, 232, 0.2);
-            --contact-text:#000000;
-
-        /* Personal Webpage Colors (Light Mode) */
             --personal-bg-light: rgba(255, 255, 255, 0.9);
             --personal-bg-dark: rgba(240, 242, 245, 0.9);
             --personal-accent-light: #4CAF50;
             --personal-accent-dark: #388E3C;
             --personal-text-highlight: #FFC107;
-            --personal-text:#000000;
         }
 
-    body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial, sans-serif;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(120deg, #0a0e27 0%, #1f2a57 40%, #151933 75%, #0a0e27 100%);
             color: var(--text-primary);
             min-height: 100vh;
@@ -64,12 +54,10 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-            body.light-mode {
+        body.light-mode {
             background: linear-gradient(135deg, #e0f7e9 0%, #a8d5a3 50%, #d0f0c0 100%);
-            color: var(--text-primary);
         }
 
-        /* Animated background orbs */
         .bg-orb {
             position: fixed;
             border-radius: 50%;
@@ -111,7 +99,6 @@
             66% { transform: translate(-30px, 30px) scale(0.9); }
         }
 
-        /* Navigation */
         nav {
             background: var(--personal-bg-dark);
             backdrop-filter: blur(10px);
@@ -142,23 +129,23 @@
         .logo {
             width: 50px;
             height: 50px;
-    
-        /* background: var(--personal-accent-light); /* Keep or remove based on desired background behind image */
-            border-radius: 100%;
-            display: flex; /* Keep for centering if needed, or remove if image fills */
-            align-items: center; /* Keep for centering if needed */
-            justify-content: center; /* Keep for centering if needed */
-    
-        /* Remove font-weight, font-size, color as they apply to text, not image */
+            background: var(--personal-accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
             transition: background 0.5s ease;
-            overflow: hidden; /* Ensures image respects border-radius */
+            overflow: hidden;
         }
 
         .logo-image {
-            width: 100%; /* Make the image fill the logo div's width */
-            height: 100%; /* Make the image fill the logo div's height */
-            object-fit: cover; /* Ensures the image covers the area without distortion, cropping if necessary */
-            border-radius: 100%; /* Apply border-radius to the image itself for a circular shape */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .name-title h3 {
@@ -197,7 +184,6 @@
             transform: translateY(-1px);
         }
 
-        /* Theme Toggle Switch */
         .theme-toggle {
             display: flex;
             align-items: center;
@@ -228,20 +214,13 @@
             width: 22px;
             height: 22px;
             background: white;
-            border-radius: 90%;
+            border-radius: 50%;
             transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .toggle-switch.active .toggle-slider {
             transform: translateX(30px);
-        }
-
-        .toggle-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            user-select: none;
         }
 
         .toggle-icons {
@@ -278,7 +257,6 @@
             opacity: 0.3;
         }
 
-        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -289,215 +267,12 @@
             padding: 8px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            order: 3;
         }
 
         .mobile-menu-btn:hover {
             background: rgba(76, 175, 80, 0.1);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .nav-links a {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1rem;
-                height: 70px;
-            }
-
-            .logo-section .name-title {
-                display: none;
-            }
-
-            .logo {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--personal-bg-dark);
-                backdrop-filter: blur(15px);
-                flex-direction: column;
-                padding: 1.5rem 1.5rem;
-                gap: 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                border-bottom: 1px solid var(--border);
-                max-height: calc(100vh - 70px);
-                overflow-y: auto;
-                justify-content: flex-start;
-            }
-
-            .nav-links.mobile-open {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-links li {
-                width: 100%;
-                margin-bottom: 0.5rem;
-            }
-
-            .nav-links li:last-child {
-                margin-bottom: 0;
-            }
-
-        /* Container to center the nav links box, responsive for mobile devices */
-        .nav-links {
-                position: fixed;
-                top: 50%;
-                left: auto;
-                transform: translate(-50%, -50%);
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                width: 90vw;
-                max-width: 250px;
-                padding: 12px;
-                background: transparent; /* Or your desired background color */
-                max-height: 80vh;
-                overflow-y: auto;
-                box-sizing: border-box; /* To include padding within width */
-                border-radius: 12px; /* optional: softer rounded edges */
-                z-index: 1000; /* ensure it's above other content */
-            }
-
-        /* Individual link styles */
-        .nav-links a {
-                display: block;
-                width: 100%;
-                padding: 14px 24px;
-                border-radius: 50px;
-                text-align: center;
-                font-size: 1rem; /* readable font size */
-                font-weight: 500;
-                background: var(--personal-bg-light);
-                border: 2.5px solid var(--border);
-                margin: 0;
-                box-sizing: border-box;
-                color: inherit; /* inherit text color */
-                text-decoration: none;
-                cursor: pointer;
-                transition: background-color 0.3s ease, color 0.3s ease;
-                white-space: nowrap; /* prevent text from wrapping */
-                overflow: hidden;    /* hide overflow if any */
-                text-overflow: ellipsis; /* show ellipsis if text too long */
-            }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-                background-color: var(--personal-bg-dark);
-                color: var(--accent-color);
-            }
-
-        /* Optional: Media queries for extra safety */
-            @media (max-width: 400px) {
-            .nav-links {
-                width: 95vw;
-                padding: 10px;
-                gap: 10px;
-            }     
-  
-            .nav-links a {
-                font-size: 0.9rem;
-                padding: 8px 12px;
-            }
-            }
-
-            .nav-links a.active {
-                background: var(--personal-accent-light);
-                border-color: var(--personal-accent-light);
-                color: white;
-            }
-
-            .nav-links a:hover {
-                background: var(--personal-accent-light);
-                color: white;
-                transform: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .theme-toggle {
-                order: 2;
-            }
-
-            .toggle-switch {
-                width: 55px;
-                height: 28px;
-            }
-
-            .toggle-slider {
-                width: 22px;
-                height: 22px;
-            }
-
-            .toggle-switch.active .toggle-slider {
-                transform: translateX(25px);
-            }
-
-            .toggle-icon {
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 0.8rem;
-                height: 65px;
-            }
-
-            .logo {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                top: 65px;
-                padding: 1rem;
-            }
-
-            .nav-links a {
-                padding: 15px 20px;
-                font-size: 0.95rem;
-            }
-
-            .toggle-switch {
-                width: 50px;
-                height: 25px;
-            }
-
-            .toggle-slider {
-                width: 19px;
-                height: 19px;
-            }
-
-            .toggle-switch.active .toggle-slider {
-                transform: translateX(23px);
-            }
-        }
-
-        /* Hero Section */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -512,15 +287,7 @@
             color: var(--text-primary);
             margin-bottom: 1rem;
             line-height: 1.2;
-        }
-
-        /* Typing Animation Styles */
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            min-height: 4.2rem; /* Prevent layout shift during typing */
+            min-height: 4.2rem;
         }
 
         .typing-container {
@@ -529,7 +296,7 @@
         }
 
         .typing-text {
-            opacity: 1; /* Change from 0 to 1 */
+            opacity: 1;
         }
 
         .cursor {
@@ -542,10 +309,6 @@
         @keyframes blink {
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
-        }
-
-        .hero h1 span {
-            color: var(--personal-accent-light);
         }
 
         .hero p.subtitle {
@@ -565,11 +328,11 @@
         .tag-card {
             background: var(--personal-bg-light);
             border: 2.5px solid var(--border);
-            padding: 1rem 0.1rem;
+            padding: 1rem 2rem;
             border-radius: 100px;
             text-align: center;
             flex: 1 1 250px;
-            max-width: 500px;
+            max-width: 300px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -578,23 +341,20 @@
         .tag-card i {
             font-size: 1rem;
             color: var(--personal-accent-light);
-            margin-bottom: 0.8rem;
+            margin-right: 0.5rem;
         }
 
         .tag-card h4 {
             font-size: 1rem;
             font-weight: normal;
             color: var(--text-primary);
+            display: inline;
         }
 
         .tag-card:hover {
             transform: translateY(-5px);
             border-color: var(--personal-accent-light);
             box-shadow: 0 12px 30px rgba(76, 175, 80, 0.25);
-        }
-
-        .tag-icon {
-            color: var(--personal-accent-light);
         }
 
         .action-buttons {
@@ -618,23 +378,12 @@
             font-size: 1rem;
         }
 
-        .btn-primary {
+        .btn-primary, .btn-secondary {
             background: var(--personal-accent-light);
             color: white;
         }
 
-        .btn-primary:hover {
-            background: var(--personal-accent-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--personal-accent-light);
-            color: white;
-        }
-
-        .btn-secondary:hover {
+        .btn-primary:hover, .btn-secondary:hover {
             background: var(--personal-accent-dark);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
@@ -649,67 +398,6 @@
             transition: color 0.5s ease;
         }
 
-        /* Mobile Responsive for Hero */
-        @media (max-width: 768px) {
-        .hero {
-            padding: 3rem 1rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            min-height: 3rem;
-        }   
-
-        .hero p.subtitle {
-            font-size: 1.1rem;
-        }
-
-        .tags {
-            gap: 0.8rem;
-        }
-
-        .tag {
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-        }
-
-        .action-buttons {
-            gap: 0.8rem;
-        }
-
-        .btn {
-            padding: 0.7rem 1.3rem;
-            font-size: 0.9rem;
-        }
-
-        .hero-description {
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-        }
-
-        @media (max-width: 480px) {
-        .hero h1 {
-            font-size: 2rem;
-            min-height: 2.4rem;
-        }
-
-        .hero p.subtitle {
-            font-size: 1rem;
-        }
-
-        .tag {
-            padding: 0.4rem 0.8rem;
-            font-size: 0.8rem;
-        }
-
-        .btn {
-            padding: 0.6rem 1.1rem;
-            font-size: 0.85rem;
-        }
-        }
-
-        /* Section Styles */
         .section {
             max-width: 1200px;
             margin: 0 auto;
@@ -739,7 +427,6 @@
             transition: background 0.5s ease;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -753,7 +440,7 @@
             border-radius: 15px;
             padding: 1.5rem;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+            transition: all 0.3s ease;
         }
 
         .skill-category:hover {
@@ -766,7 +453,6 @@
             color: var(--personal-accent-light);
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            transition: color 0.5s ease;
         }
 
         .skill-list {
@@ -778,56 +464,52 @@
             padding: 0.3rem 0;
             position: relative;
             padding-left: 1.5rem;
-            transition: color 0.5s ease;
         }
 
         .skill-list li::before {
-            content: ' ▸ ';
+            content: '▸';
             position: absolute;
             left: 0;
             color: var(--personal-accent-light);
-            transition: color 0.5s ease;
         }
 
-        /* Experience Timeline */
         .timeline {
             position: relative;
             padding: 2rem 0;
-            /* Center the timeline line */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align items to the left */
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%; /* Keep the line centered initially */
-            transform: translateX(-50%);
+            left: 30px;
+            top: 0;
+            bottom: 0;
             width: 2px;
-            height: 100%;
             background: var(--border);
-            transition: background 0.5s ease;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
-            width: 100%; /* Full width for single column */
-            text-align: left; /* Ensure all text is left-aligned */
-            padding-left: 60px; /* Space for the dot and line */
-            box-sizing: border-box;
+            margin-bottom: 2.5rem;
+            padding-left: 70px;
         }
 
-        /* Adjust timeline line and dots for single column */
-        .timeline::before {
-            left: 30px; /* Move the line to the left */
-            transform: translateX(0);
+        .timeline-dot {
+            position: absolute;
+            left: 22px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--personal-accent-light);
+            border: 3px solid var(--bg-primary);
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
-        .timeline-item .timeline-dot {
-            left: 20px; /* Position dot on the left, aligned with the line */
-            right: auto; /* Remove right positioning */
+        .timeline-content:hover .timeline-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
         }
 
         .timeline-content {
@@ -837,7 +519,7 @@
             padding: 2rem;
             backdrop-filter: blur(10px);
             position: relative;
-            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+            transition: all 0.3s ease;
         }
 
         .timeline-content:hover {
@@ -850,157 +532,66 @@
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            transition: color 0.5s ease;
         }
 
         .job-title {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
-            transition: color 0.5s ease;
         }
 
         .job-period {
             color: var(--text-secondary);
             font-size: 0.9rem;
-            margin-bottom: 1rem;    
-            transition: color 0.5s ease;
+            margin-bottom: 1rem;
         }
 
-        .job-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            transition: color 0.5s ease;
-        }
-
-        /* Education Cards */
-        .education-grid {
+        .education-grid, .blogs-grid, .recommendations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .education-card {
+        .education-card, .blog-card, .recommendation-card {
             background: var(--personal-bg-light);
             border: 2.5px solid var(--border);
             border-radius: 15px;
             padding: 2rem;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+            transition: all 0.3s ease;
         }
 
-        .education-card:hover {
+        .education-card:hover, .blog-card:hover, .recommendation-card:hover {
             transform: translateY(-5px);
             border-color: var(--personal-accent-light);
         }
 
-        .degree {
-            color: var(--personal-accent-light);
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            transition: color 0.5s ease;
-        }
-
-        .institution {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            transition: color 0.5s ease;
-        }
-
-        .grade {
-            margin-top: 1rem;
-            color: var(--text-primary);
-            transition: color 0.5s ease;
-        }
-
-        /* Blogs Section */
-        .blogs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
         .blog-card {
-            background: var(--personal-bg-light);
-            border: 2.5px solid var(--border);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease, background 0.5s ease, border-color 0.5s ease;
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--personal-accent-light);
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
-        }
-
-        .blog-title {
+        .degree, .blog-title, .recommender-name {
             color: var(--personal-accent-light);
-            font-size: 1.2rem;
-            font-weight: bold;  
-            margin-bottom: 1rem;
-            transition: color 0.5s ease;
-        }
-
-        .blog-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            transition: color 0.5s ease;
-        }
-
-        /* Recommendations Section */
-        .recommendations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .recommendation-card {
-            background: var(--personal-bg-light);
-            border: 2.5px solid var(--border);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease, background 0.15s ease, border-color 0.5s ease;
-        }
-
-        .recommendation-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--personal-accent-light);
-        }
-
-        .recommender-name {
             font-size: 1.1rem;
             font-weight: bold;
-            color: var(--personal-accent-light);
             margin-bottom: 0.5rem;
-            transition: color 0.5s ease;
         }
 
-        .recommender-title {
+        .institution, .blog-date, .recommender-title {
             font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-bottom: 1rem;
-            transition: color 0.5s ease;
+            margin-bottom: 0.5rem;
         }
 
-        .recommendation-text {
-            font-size: 0.95rem;
+        .grade, .recommendation-text {
+            margin-top: 1rem;
             color: var(--text-secondary);
             line-height: 1.6;
-            transition: color 0.5s ease;
         }
 
-        /* Contact Section */
         .contact-info {
             text-align: center;
             margin-top: 2rem;
@@ -1015,7 +606,7 @@
         }
 
         .contact-links a {
-            color: var(--personal-text-light);
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -1033,18 +624,81 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2.7rem 2rem;
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             margin-top: 4rem;
-            transition: color 0.5s ease, border-color 0.5s ease;
         }
 
-        /* Mobile Responsive for Sections */
         @media (max-width: 768px) {
+            .nav-container {
+                height: 70px;
+            }
+
+            .logo-section .name-title {
+                display: none;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 50%;
+                transform: translate(-50%, -100%);
+                opacity: 0;
+                visibility: hidden;
+                flex-direction: column;
+                background: var(--personal-bg-dark);
+                backdrop-filter: blur(15px);
+                padding: 1rem;
+                gap: 0.5rem;
+                width: 90vw;
+                max-width: 250px;
+                border-radius: 12px;
+                border: 2px solid var(--border);
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.mobile-open {
+                transform: translate(-50%, 0);
+                opacity: 1;
+                visibility: visible;
+                top: 80px;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 14px 24px;
+                border-radius: 50px;
+                text-align: center;
+                background: var(--personal-bg-light);
+                border: 2px solid var(--border);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                min-height: 3rem;
+            }
+
             .section {
                 padding: 3rem 1rem;
             }
@@ -1052,51 +706,40 @@
             .section-title {
                 font-size: 2rem;
             }
-
-            .contact-links {
-                gap: 0.8rem;
-            }
-
-            .contact-links a {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 480px) {
-            .section {
-                padding: 2rem 0.8rem;
+            .hero h1 {
+                font-size: 2rem;
+                min-height: 2.4rem;
+            }
+
+            .tag-card {
+                padding: 0.8rem 1.5rem;
             }
 
             .section-title {
                 font-size: 1.8rem;
             }
-
-            .contact-links a {
-                padding: 0.5rem 0.9rem;
-                font-size: 0.85rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Background Orbs -->
     <div class="bg-orb orb1"></div>
     <div class="bg-orb orb2"></div>
     <div class="bg-orb orb3"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo-section">
-            <div class="logo">
-            <img src="Rajesh kanna.jpg" alt="Rajesh Kanna Logo" class="logo-image">
-    </div>
-    <div class="name-title">
-            <h3>Rajesh Kanna</h3>
-            <p>Investments & Payroll</p>
-    </div>
-</div>
+                <div class="logo">
+                    <img src="Rajesh kanna.jpg" alt="Rajesh Kanna Logo" class="logo-image">
+                </div>    
+                <div class="name-title">
+                    <h3>Rajesh Kanna</h3>
+                    <p>Investments & Payroll</p>
+                </div>
+            </div>
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">About</a></li>
@@ -1109,7 +752,6 @@
             </ul>
             
             <div class="theme-toggle">
-                <span class="toggle-label"></span>
                 <div class="toggle-switch" id="theme-toggle-switch">
                     <div class="toggle-slider"></div>
                     <div class="toggle-icons">
@@ -1123,45 +765,44 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="about">
         <h1>
-    <div class="typing-container">
-        <span id="typingText" class="typing-text"></span>
-        <span id="cursor" class="cursor"></span>
-    </div>
-</h1>
+            <div class="typing-container">
+                <span id="typingText" class="typing-text"></span>
+                <span id="cursor" class="cursor"></span>
+            </div>
+        </h1>
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
-        <div class="tag-cards fade-in">
-    <div class="tag-card">  
-        <i class="fas fa-map-marker-alt"></i>
-        <h4>Bangalore, Karnataka</h4>
-    </div>
-    <div class="tag-card">
-        <i class="fas fa-briefcase"></i>
-        <h4>3+ Years Experience</h4>
-    </div>
-    <div class="tag-card">
-        <i class="fas fa-coins"></i>
-        <h4>Investments & Payroll Expert</h4>
-    </div>
-</div>
+        
+        <div class="tag-cards">
+            <div class="tag-card">  
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Bangalore, Karnataka</h4>
+            </div>
+            <div class="tag-card">
+                <i class="fas fa-briefcase"></i>
+                <h4>3+ Years Experience</h4>
+            </div>
+            <div class="tag-card">
+                <i class="fas fa-coins"></i>
+                <h4>Investments & Payroll Expert</h4>
+            </div>
+        </div>
 
-<div class="action-buttons fade-in">
-    <a href="mailto:rajeshkannarrr88@gmail.com" class="btn btn-primary">
-        <i class="fas fa-envelope"></i> Schedule a Meeting
-    </a>
-    <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
-        <i class="fas fa-file-pdf"></i> View Portfolio PDF
-    </a>
-</div>
-        <p class="hero-description fade-in">
-            A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements.
-            Passionate markets enthusiast managing a diversified portfolio across Indian & US equities, Mutual funds, Bonds, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
+        <div class="action-buttons">
+            <a href="mailto:rajeshkannarrr88@gmail.com" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Schedule a Meeting
+            </a>
+            <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
+            <i class="fas fa-file-pdf"></i>View Portfolio
+            </a>
+        </div>
+        
+        <p class="hero-description">
+            A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements. Passionate markets enthusiast managing a diversified portfolio across Indian & US equities, Mutual funds, Bonds, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
         </p>
     </section>
 
-    <!-- Technical Skills Section -->
     <section class="section" id="skills">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
@@ -1181,7 +822,7 @@
                     <li>End-to-End Payroll Processing</li>
                     <li>Deductions Management</li>
                     <li>Gratuity & F&F Settlements</li>
-                    <li>Payment processing</li>
+                    <li>Payment Processing</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -1207,25 +848,23 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section class="section" id="experience">
         <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-dot"></div>
+                    <div class="company-name">IBM</div>
+                    <div class="job-title">Senior Process Analyst - Payroll</div>
+                    <div class="job-period">November 2025 - Present</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
                     <div class="company-name">Sundus/Masadir Recruitment</div>
                     <div class="job-title">Payroll Executive</div>
                     <div class="job-period">May 2024 - June 2025</div>
-                    <div class="job-description">
-                <li>Manage end-to-end payroll processing, ensuring accurate and timely salary disbursements for over 1,400+ employees each month.
-                <li>Prepare and reconcile payroll reports, including deductions, overtime, bonuses, and other adjustments.
-                <li>Collaborate with the Account Management (AM) team to maintain precise employee records and resolve payroll discrepancies.
-                <li>Address employee inquiries related to payroll professionally and in a timely manner.
-                <li>Stay abreast of UAE labor laws and regulations to ensure full compliance in payroll processes.
-                <li>Partner with HR operations to verify accurate tracking of employee attendance, leaves, and related data.
-                <li>Review and process weekly ad hoc payments and End of Service Benefits (EOSB) calculations.
-                    </div>
                 </div>
             </div>
             <div class="timeline-item">
@@ -1234,18 +873,6 @@
                     <div class="company-name">Techindia Infoway Pvt Ltd</div>
                     <div class="job-title">Payroll Assistant</div>
                     <div class="job-period">June 2022 - September 2023</div>
-                    <div class="job-description">
-            <ul class="experience-achievements">
-                <li>Handled the entire payroll processing system from start to finish, ensuring precise record-keeping with the I Formula HR software.
-                <li>Ensured precise and timely disbursement of employee salaries, upholding strict adherence to payment schedules.
-                <li>Proficiently handled the computation and preparation of crucial deductions, including PF, ESIC, PT, and LWF quantifiably optimizing efficiency and accuracy in payroll operations.
-                <li>Closely tracked attendance for a substantial workforce of over 800+ employees using the Formula HR system.
-                <li>Orchestrated the streamlined execution of gratuity and full & final settlements, meticulously adhering to company policies and legal mandates.
-                <li>Applied sophisticated Microsoft Excel formulas to thoroughly validate and analyze attendance reports, ensuring precise data accuracy.
-                <li>Produced detailed payroll reports at regular intervals, serving as crucial records for managerial assessment and strategic decision-making.
-                <li>Demonstrated expertise in creating monthly salary sheets using intricate MS Excel formulas, contributing to efficient payroll execution.
-                <li>Proficiently oversee cash and bank entries, executing precise invoice bookings through the utilization of Tally Prime for seamless and accurate financial recording.   
-                    </div>
                 </div>
             </div>
             <div class="timeline-item">
@@ -1254,20 +881,11 @@
                     <div class="company-name">Agaram Foundation NGO</div>
                     <div class="job-title">Finance Executive</div>
                     <div class="job-period">September 2021 - April 2022</div>
-                    <div class="job-description">
-                <li>Proficient in painstakingly preparing bank reconciliation statements to ensure financial accuracy and transparency.
-                <li>Handle payable cash, reimbursements, and expenses with a strong commitment to financial responsibility.
-                <li>Expertly manage end-to-end payroll processing, ensuring accurate and timely payment of employee salaries while adhering to payment schedules.
-                <li>Proficiently oversee accounts payable and receivable, contributing to streamlined and efficient financial operations.
-                <li>Proven ability in creating and managing various financial journal entries for precise accounting.
-                <li>Accurately build up and analyze expense reports, making sure that financial information is presented in a thorough and expert manner.
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section class="section" id="education">
         <h2 class="section-title">Education</h2>
         <div class="education-grid">
@@ -1289,7 +907,6 @@
         </div>
     </section>
 
-    <!-- Blogs Section -->
     <section class="section" id="projects">
         <h2 class="section-title">Featured Blogs</h2>
         <div class="blogs-grid">
@@ -1302,13 +919,12 @@
                 <div class="blog-date">Published on June 29, 2024</div>
             </a>
             <a href="https://www.linkedin.com/pulse/how-am-i-investing-my-16000-salary-rajesh-kanna-rr/" target="_blank" class="blog-card">
-                <div class="blog-title">How am I investing in my 16000 Salary ? </div>
+                <div class="blog-title">How am I investing in my 16000 Salary?</div>
                 <div class="blog-date">Published on March 11, 2023</div>
             </a>
         </div>
     </section>
 
-    <!-- Recommendations Section -->
     <section class="section" id="recommendations">
         <h2 class="section-title">Recommendations</h2>
         <div class="recommendations-grid">
@@ -1337,16 +953,16 @@
                 <div class="recommender-name">Gowtham Raj</div>
                 <div class="recommender-title">SAP Functional Consultant</div>
                 <div class="recommendation-text">
-                    Rajesh isn’t just a school friend he is like a brother to me. I’ve known him since our school days, and his unwavering commitment to ethics and natural leadership have consistently inspired me. He leads by example, communicates with clarity, and brings people together around shared goals. In challenging moments, he checks in, offers perspective, and motivates me to stay positive. I wholeheartedly recommend Rajesh for any role that values integrity, ownership, and people-first leadership.
+                    Rajesh isn't just a school friend he is like a brother to me. I've known him since our school days, and his unwavering commitment to ethics and natural leadership have consistently inspired me. He leads by example, communicates with clarity, and brings people together around shared goals. In challenging moments, he checks in, offers perspective, and motivates me to stay positive. I wholeheartedly recommend Rajesh for any role that values integrity, ownership, and people-first leadership.
                 </div>
             </div>    
             <div class="recommendation-card">
                 <div class="recommender-name">Keerthy T</div>
                 <div class="recommender-title">Senior Payroll Specialist at Sundus</div>
                 <div class="recommendation-text">
-                    He consistently gave 100% to our team and was critical in ensuring the completion of works by the deadline. Rajesh’s work ethic was impeccable and he was always the first person to offer help and support.
+                    He consistently gave 100% to our team and was critical in ensuring the completion of works by the deadline. Rajesh's work ethic was impeccable and he was always the first person to offer help and support.
                 </div>
-             </div>    
+            </div>    
             <div class="recommendation-card">
                 <div class="recommender-name">Shahala Sherin E</div>
                 <div class="recommender-title">Accounts Payable - Payroll at Sundus</div>
@@ -1357,14 +973,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
-            <p class="hero-description fade-in">
+            <p class="hero-description">
                 I'm open to connecting about investment strategies, payroll management, and finance operations. Feel free to get in touch to discuss new opportunities or collaborations.
             </p>
-            <div class="contact-links fade-in">
+            <div class="contact-links">
                 <a href="mailto:rajeshkannarrr88@gmail.com">
                     <i class="fas fa-envelope"></i> Email
                 </a>
@@ -1382,7 +997,7 @@
                 </a>
                 <a href="https://x.com/RajeshK86632308/" target="_blank">
                     <i class="fab fa-twitter"></i> X (Twitter)
-                    </a>
+                </a>
                 <a href="https://www.instagram.com/rajesh.kanna.rr/" target="_blank">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
@@ -1390,261 +1005,173 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Rajesh Kanna RR. All rights reserved.</p>
         <p>Designed by RK</p>
     </footer>
 
     <script>
-
-        // Typing Animation Function
-function typeWriter(text, elementId, speed = 300, callback) {
-    const element = document.getElementById(elementId);
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else if (callback) {
-            callback();
+        function typeWriter(text, elementId, speed, callback) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
         }
-    }
-    type();
-}
 
-// Typing Animation Function (keep this as is)
-function typeWriter(text, elementId, speed = 100, callback) {
-    const element = document.getElementById(elementId);
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        } else if (callback) {
-            callback();
+        function typeWriterWithColor(text, elementId, delay, color, callback) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            const span = document.createElement('span');
+            span.style.color = color;
+            element.appendChild(span);
+            
+            function typing() {
+                if (i < text.length) {
+                    span.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typing, delay);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            typing();
         }
-    }
-    type();
-}
 
-// Updated DOMContentLoaded event
-document.addEventListener('DOMContentLoaded', function() {
-    const typingText = document.getElementById('typingText');
-    const cursor = document.getElementById('cursor');
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingText = document.getElementById('typingText');
+            const cursor = document.getElementById('cursor');
 
-    // Ensure elements exist before starting animation
-    if (typingText && cursor) {
-    setTimeout(() => {
-        typeWriter("Hi, I'm ", 'typingText', 200, () => {
-            typeWriterWithColor("Rajesh Kanna RR", 'typingText', 200, 'var(--personal-accent-light)', () => {
+            if (typingText && cursor) {
                 setTimeout(() => {
-                    cursor.style.display = 'none';
-                }, 1500);
-            });
-        });
-    }, 500);
-}
-
-function typeWriterWithColor(text, elementId, delay, color, callback) {
-    const element = document.getElementById(elementId);
-    let i = 0;
-    const span = document.createElement('span');
-    span.style.color = color;
-    element.appendChild(span);
-    
-    function typing() {
-        if (i < text.length) {
-            span.textContent += text.charAt(i);
-            i++;
-            setTimeout(typing, delay);
-        } else {
-            if (callback) callback();
-        }
-    }
-    typing();
-}
-
-});
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    typeWriter("Hi, I'm ", 'typingText', 100, () => {
+                        typeWriterWithColor("Rajesh Kanna RR", 'typingText', 100, 'var(--personal-accent-light)', () => {
+                            setTimeout(() => {
+                                cursor.style.display = 'none';
+                            }, 1500);
+                        });
                     });
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and timeline items
-        document.querySelectorAll('.skill-category, .timeline-item, .education-card, .blog-card, .recommendation-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Theme Toggle logic
-        const toggleSwitch = document.getElementById('theme-toggle-switch');
-        const toggleLabel = document.querySelector('.toggle-label');
-
-        function applyTheme(theme) {
-            if (theme === 'light') {
-                document.body.classList.add('light-mode');
-                toggleSwitch.classList.remove('active');
-                toggleLabel.textContent = '';
-            } else {
-                document.body.classList.remove('light-mode');
-                toggleSwitch.classList.add('active');
-                toggleLabel.textContent = '';
+                }, 500);
             }
-        }
 
-        function toggleTheme() {
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme === 'light') {
-                applyTheme('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                applyTheme('light');
-                localStorage.setItem('theme', 'light');
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Close mobile menu if open
+                        navLinks.classList.remove('mobile-open');
+                        mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+            });
+
+            // Active nav link on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const sections = document.querySelectorAll('section[id]');
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.skill-category, .timeline-item, .education-card, .blog-card, .recommendation-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Theme toggle
+            const toggleSwitch = document.getElementById('theme-toggle-switch');
+
+            function applyTheme(theme) {
+                if (theme === 'light') {
+                    document.body.classList.add('light-mode');
+                    toggleSwitch.classList.remove('active');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    toggleSwitch.classList.add('active');
+                }
             }
-        }
 
-    // Apply saved theme on page load
-        document.addEventListener('DOMContentLoaded', () => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        applyTheme(savedTheme);
-        toggleSwitch.addEventListener('click', toggleTheme);
-    });
+            function toggleTheme() {
+                const currentTheme = localStorage.getItem('theme');
+                if (currentTheme === 'light') {
+                    applyTheme('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    applyTheme('light');
+                    localStorage.setItem('theme', 'light');
+                }
+            }
 
-    // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            applyTheme(savedTheme);
+            toggleSwitch.addEventListener('click', toggleTheme);
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-open');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
-        });
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
 
-        // Active link functionality
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                
-                // Close mobile menu when clicking on a link
-                navLinks.classList.remove('mobile-open');
-                mobileMenuBtn.innerHTML = '☰';
-                
-                // Smooth scroll to section
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+            });
+
+            // Close mobile menu on outside click
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-container')) {
+                    navLinks.classList.remove('mobile-open');
+                    mobileMenuBtn.innerHTML = '☰';
                 }
             });
-        });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-container')) {
-                navLinks.classList.remove('mobile-open');
-                mobileMenuBtn.innerHTML = '☰';
-            }
-        });
-
-        // Close mobile menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('mobile-open');
-                mobileMenuBtn.innerHTML = '☰';
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Update active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
+            // Close mobile menu on resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('mobile-open');
+                    mobileMenuBtn.innerHTML = '☰';
                 }
             });
         });
     </script>
 </body>
 </html>
-
