@@ -34,12 +34,12 @@
             --accent: #1a73e8;
             --accent-hover: #4285f4;
             --text-primary: #333333;
-            --text-secondary: #666666;
+            --text-secondary: #515050;
             --card-bg: rgba(255, 255, 255, 0.9);
             --border: rgba(26, 115, 232, 0.2);
             --personal-bg-light: rgba(255, 255, 255, 0.9);
             --personal-bg-dark: rgba(240, 242, 245, 0.9);
-            --personal-accent-light: #4CAF50;
+            --personal-accent-light: #038407;
             --personal-accent-dark: #388E3C;
             --personal-text-highlight: #FFC107;
         }
@@ -280,7 +280,7 @@
         .hero {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding:5rem 2rem;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -595,7 +595,7 @@
             color: var(--text-secondary);
             line-height: 1.6;
         }
-
+        
         .contact-info {
             text-align: center;
             margin-top: 2rem;
@@ -634,7 +634,69 @@
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             margin-top: 4rem;
+            font-size: large;
+            font-size:larger;
         }
+
+        .education-grid, .blogs-grid, .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+/* ============================
+   UNIVERSAL PILL / GLOW CARD EFFECT
+============================ */
+        .glow-card {
+            position: relative;
+            background: rgba(255,255,255,0.03);
+            border-radius: 22px;
+            padding: 1.8rem;
+            border: 1.5px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(14px);
+            color: var(--text-primary);
+            transition: all 0.35s ease;
+            box-shadow: inset 0 -6px 15px rgba(0,0,0,0.35),
+                0 10px 25px rgba(0,0,0,0.25);
+            overflow: visible;
+        }
+
+/* inner dark layer */
+        .glow-card::after {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border-radius: 20px;
+            background: rgba(0,0,0,0.25);
+            z-index: -1;
+        }
+
+/* outer neon ring */
+        .glow-card::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            right: -6px;
+            top: -6px;
+            bottom: -6px;
+            border-radius: 26px;
+            border: 2px solid rgba(99,102,241,0.12);
+            filter: blur(10px);
+            transition: all 0.35s ease;
+        }
+
+/* hover effect */
+        .glow-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+        }
+
+        .glow-card:hover::before {
+            border-color: rgba(76,175,80,0.85);
+            filter: blur(14px);
+        }
+
 
         @media (max-width: 768px) {
             .nav-container {
@@ -753,6 +815,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Blogs</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#recommendations">Recommendations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -781,15 +844,15 @@
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
         
         <div class="tag-cards">
-            <div class="tag-card">  
+            <div class="tag-card glow-card"> 
                 <i class="fas fa-map-marker-alt"></i>
                 <h4>Bangalore, Karnataka</h4>
             </div>
-            <div class="tag-card">
+            <div class="tag-card glow-card">
                 <i class="fas fa-briefcase"></i>
                 <h4>3+ Years Experience</h4>
             </div>
-            <div class="tag-card">
+            <div class="tag-card glow-card">
                 <i class="fas fa-coins"></i>
                 <h4>Investments & Payroll Expert</h4>
             </div>
@@ -802,8 +865,7 @@
             <a href="Rajesh kanna.pdf" download="Rajesh kanna.pdf" class="btn btn-secondary">
             <i class="fas fa-file-pdf"></i>View Portfolio
             </a>
-        </div>
-        
+        </div>  
         <p class="hero-description">
             A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements. Passionate markets enthusiast managing a diversified portfolio across Indian & US equities, Mutual funds, Bonds, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
         </p>
@@ -812,7 +874,7 @@
     <section class="section" id="skills">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
-            <div class="skill-category">
+            <div class="skill-category glow-card">
                 <h3>Financial Management</h3>
                 <ul class="skill-list">
                     <li>Portfolio Management</li>
@@ -822,7 +884,7 @@
                     <li>Bank Reconciliation</li>
                 </ul>
             </div>    
-            <div class="skill-category">
+            <div class="skill-category glow-card">
                 <h3>Payroll & Compliance</h3>
                 <ul class="skill-list">
                     <li>End-to-End Payroll Processing</li>
@@ -831,7 +893,7 @@
                     <li>Payment Processing</li>
                 </ul>
             </div>
-            <div class="skill-category">
+            <div class="skill-category glow-card">
                 <h3>Software Proficiency</h3>
                 <ul class="skill-list">
                     <li>SAP SuccessFactors HCM</li>
@@ -841,7 +903,7 @@
                     <li>Tally ERP 9 & Prime</li>
                 </ul>
             </div>
-            <div class="skill-category">
+            <div class="skill-category glow-card">
                 <h3>Core Competencies</h3>
                 <ul class="skill-list">
                     <li>Strategic Decision-Making</li>
@@ -858,7 +920,7 @@
         <h2 class="section-title">Professional Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content glow-card">
                     <div class="timeline-dot"></div>
                     <div class="company-name">IBM</div>
                     <div class="job-title">Senior Process Analyst - Payroll</div>
@@ -866,7 +928,7 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content glow-card">
                     <div class="timeline-dot"></div>
                     <div class="company-name">Sundus/Masadir Recruitment</div>
                     <div class="job-title">Payroll Executive</div>
@@ -874,7 +936,7 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content glow-card">
                     <div class="timeline-dot"></div>
                     <div class="company-name">Techindia Infoway Pvt Ltd</div>
                     <div class="job-title">Payroll Assistant</div>
@@ -882,7 +944,7 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content glow-card">
                     <div class="timeline-dot"></div>
                     <div class="company-name">Agaram Foundation NGO</div>
                     <div class="job-title">Finance Executive</div>
@@ -895,17 +957,17 @@
     <section class="section" id="education">
         <h2 class="section-title">Education</h2>
         <div class="education-grid">
-            <div class="education-card">
+            <div class="education-card glow-card">
                 <div class="degree">Master of Business Administration</div>
                 <div class="institution">Pondicherry University (DDE)</div>
                 <div class="grade">Grade: 60% | Year: 2023</div>
             </div>
-            <div class="education-card">
+            <div class="education-card glow-card">
                 <div class="degree">Bachelor of Commerce</div>
                 <div class="institution">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</div>
                 <div class="grade">CGPA: 7.7 | Year: 2021</div>
             </div>
-            <div class="education-card">
+            <div class="education-card glow-card">
                 <div class="degree">Higher Secondary Certificate</div>
                 <div class="institution">Shinehill Academy Matric HSS</div>
                 <div class="grade">Percentage: 87% | Year: 2018</div>
@@ -914,62 +976,96 @@
     </section>
 
     <section class="section" id="projects">
-        <h2 class="section-title">Featured Blogs</h2>
+    <h2 class="section-title">Featured Blogs</h2>
+    <div class="blogs-grid">
+        <a href="https://www.linkedin.com/pulse/beginners-guide-fundamental-analysis-choosing-right-stocks-rr-5ieec/" 
+           target="_blank" 
+           class="blog-card glow-card">
+            <div class="blog-title">
+                A Beginner's Guide to Fundamental Analysis: Choosing the Right Stocks
+            </div>
+            <div class="blog-date">Published on July 19, 2025</div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/reflecting-my-investment-journey-18-months-growth-learning-rr-eiwcc/" 
+           target="_blank" 
+           class="blog-card glow-card">
+            <div class="blog-title">
+                Reflecting on My Investment Journey: 18 Months of Growth and Learning
+            </div>
+            <div class="blog-date">Published on June 29, 2024</div>
+        </a>
+        <a href="https://www.linkedin.com/pulse/how-am-i-investing-my-16000-salary-rajesh-kanna-rr/" 
+           target="_blank" 
+           class="blog-card glow-card">
+            <div class="blog-title">
+                How am I investing my 16000 Salary?
+            </div>
+            <div class="blog-date">Published on March 11, 2023</div>
+        </a>
+
+    </div>
+</section>
+
+    </section>
+
+        <section class="section" id="services">
+        <h2 class="section-title">Services I Offer</h2>
         <div class="blogs-grid">
-            <a href="https://www.linkedin.com/pulse/beginners-guide-fundamental-analysis-choosing-right-stocks-rr-5ieec/" target="_blank" class="blog-card">
-                <div class="blog-title">A Beginner's Guide to Fundamental Analysis: Choosing the Right Stocks</div>
-                <div class="blog-date">Published on July 19, 2025</div>
-            </a>
-            <a href="https://www.linkedin.com/pulse/reflecting-my-investment-journey-18-months-growth-learning-rr-eiwcc/" target="_blank" class="blog-card">
-                <div class="blog-title">Reflecting on My Investment Journey: 18 Months of Growth and Learning</div>
-                <div class="blog-date">Published on June 29, 2024</div>
-            </a>
-            <a href="https://www.linkedin.com/pulse/how-am-i-investing-my-16000-salary-rajesh-kanna-rr/" target="_blank" class="blog-card">
-                <div class="blog-title">How am I investing in my 16000 Salary?</div>
-                <div class="blog-date">Published on March 11, 2023</div>
-            </a>
+            <div class="blog-card glow-card" style="display:block;">
+                <div class="blog-title">Blog Posting</div>
+            </div>
+            <div class="blog-card glow-card" style="display:block;">
+                <div class="blog-title">Content Writing</div>
+            </div>
+            <div class="blog-card glow-card" style="display:block;">
+                <div class="blog-title">Financial Wealth Creating</div>
+            </div>
+            <div class="blog-card glow-card" style="display:block;">
+                <div class="blog-title">Investment Planning</div>
+            </div>
         </div>
     </section>
+
 
     <section class="section" id="recommendations">
         <h2 class="section-title">Recommendations</h2>
         <div class="recommendations-grid">
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Annamalai Palani</div>
                 <div class="recommender-title">Senior Product Developer at Lumel</div>
                 <div class="recommendation-text">
                     I wholeheartedly recommend rajesh to anyone seeking a knowledgeable and trustworthy financial advisor. His commitment to their clients is unparalleled, and I am confident that he will provide the same level of exceptional service to anyone who works with him. Moreover, Rajesh has always demonstrated the highest level of integrity and honesty in his dealings with me. He is attentive to my needs and have consistently provided me with personalised financial solutions that are tailored to my specific goals and objectives.
                 </div>
             </div>  
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Kaviya Kirubakaran</div>
                 <div class="recommender-title">AM – Corporate Partnership at Sambhav Foundation</div>
                 <div class="recommendation-text">
                     Mr. Rajesh worked with me at Agaram Foundation as a Finance Executive, where he consistently showcased strong financial expertise and attention to detail. He efficiently handled complex calculations, collaborated well with Admin and Finance teams, and played a key role in streamlining processes. With his professionalism, reliability, and problem-solving skills, I highly recommend him as a valuable asset for any finance role.
                 </div>
             </div>     
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Dinesh Vishwa</div>
                 <div class="recommender-title">Senior Process Executive at Cognizant</div>
                 <div class="recommendation-text">
                     Heyyyyy!!! my working partner Raj, and it has truly been a great experience. Collaborating with him has not only been enjoyable but also a valuable learning opportunity. Throughout our time together, we've shared a lot of insights, especially in our core finance work. Raj consistently brought clarity and depth to every discussion. I also had the chance to go through his LinkedIn articles—they reflect his knowledge and passion for the field, and I genuinely appreciated the way he shares that knowledge so openly. Thank you, Raj, for the great teamwork and the time we spent learning and growing together. Wishing you continued success ahead!
                 </div>
             </div>
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Gowtham Raj</div>
                 <div class="recommender-title">SAP Functional Consultant</div>
                 <div class="recommendation-text">
                     Rajesh isn't just a school friend he is like a brother to me. I've known him since our school days, and his unwavering commitment to ethics and natural leadership have consistently inspired me. He leads by example, communicates with clarity, and brings people together around shared goals. In challenging moments, he checks in, offers perspective, and motivates me to stay positive. I wholeheartedly recommend Rajesh for any role that values integrity, ownership, and people-first leadership.
                 </div>
             </div>    
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Keerthy T</div>
                 <div class="recommender-title">Senior Payroll Specialist at Sundus</div>
                 <div class="recommendation-text">
                     He consistently gave 100% to our team and was critical in ensuring the completion of works by the deadline. Rajesh's work ethic was impeccable and he was always the first person to offer help and support.
                 </div>
             </div>    
-            <div class="recommendation-card">
+            <div class="recommendation-card glow-card">
                 <div class="recommender-name">Shahala Sherin E</div>
                 <div class="recommender-title">Accounts Payable - Payroll at Sundus</div>
                 <div class="recommendation-text">
@@ -1012,8 +1108,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Rajesh Kanna RR. All rights reserved.</p>
-        <p>Designed by RK</p>
+        <p>Designed by RK <span style="color: red; font-size: 1.1em;">&hearts;</span></p>
     </footer>
 
     <script>
