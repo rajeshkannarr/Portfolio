@@ -17,7 +17,7 @@
             --bg-secondary: #151933;
             --accent: #6366f1;
             --accent-hover: #818cf8;
-            --text-primary: #ffffff;
+            --text-primary: hwb(0 100% 0%);
             --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.5);
             --border: rgba(99, 102, 241, 0.2);
@@ -34,11 +34,11 @@
             --accent: #1a73e8;
             --accent-hover: #4285f4;
             --text-primary: #333333;
-            --text-secondary: #515050;
+            --text-secondary: #1A1A1A;
             --card-bg: rgba(255, 255, 255, 0.9);
             --border: rgba(26, 115, 232, 0.2);
             --personal-bg-light: rgba(255, 255, 255, 0.9);
-            --personal-bg-dark: rgba(240, 242, 245, 0.9);
+            --personal-bg-dark: rgba(235, 255, 240, 0.9);
             --personal-accent-light: #038407;
             --personal-accent-dark: #388E3C;
             --personal-text-highlight: #FFC107;
@@ -180,10 +180,38 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            background: var(--personal-accent-light);
-            color: white;
-            transform: translateY(-1px);
+        /* ACTIVE NAV ITEM GLOW EFFECT */
+        .nav-links a.active {
+            position: relative;
+            background: #4CAF50;        /* green fill */
+            color: #fff;
+            padding: 0.55rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.25),     /* soft shadow */
+                inset 0 4px 12px rgba(255,255,255,0.4); /* inner glow */
+        }
+
+/* Outer Glow Ring */
+        .nav-links a.active::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            right: -6px;
+            top: -6px;
+            bottom: -6px;
+            border-radius: 60px;
+            border: 2px solid rgba(76,175,80,0.8);
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+/* Hover Effect (Optional – makes it smooth) */
+        .nav-links a:hover:not(.active) {
+            color: #fff;
+            background: rgba(76,175,80,0.25);
         }
 
         .theme-toggle {
@@ -634,8 +662,7 @@
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
             margin-top: 4rem;
-            font-size: large;
-            font-size:larger;
+            font-size: 1.2rem;
         }
 
         .education-grid, .blogs-grid, .recommendations-grid {
@@ -797,7 +824,7 @@
     <div class="bg-orb orb2"></div>
     <div class="bg-orb orb3"></div>
 
-    <nav>
+    <nav class="nav-glow">
         <div class="nav-container">
             <div class="logo-section">
                 <div class="logo">
