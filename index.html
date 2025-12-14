@@ -1268,9 +1268,16 @@
                 }
             }
 
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            applyTheme(savedTheme);
+            localStorage.setItem('theme', 'dark');
+                    applyTheme('dark');
             toggleSwitch.addEventListener('click', toggleTheme);
+
+            // Force default mode = DARK on first load
+            if (savedTheme === 'dark') {
+            toggleSwitch.classList.add('active');
+            } else {
+            toggleSwitch.classList.remove('active');
+            }
 
             // Mobile menu
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
