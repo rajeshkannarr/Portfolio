@@ -50,6 +50,7 @@
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+            width: 100%;
             position: relative;
             transition: background 0.5s ease, color 0.5s ease;
         }
@@ -315,11 +316,12 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             color: var(--text-primary);
             margin-bottom: 1rem;
             line-height: 1.2;
-            min-height: 4.2rem;
+            min-height: auto;
+            word-break: break-word;
         }
 
         .typing-container {
@@ -344,7 +346,8 @@
         }
 
         .hero p.subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+            padding: 0 0.5rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
         }
@@ -354,7 +357,9 @@
             justify-content: center;
             gap: 1.5rem;
             margin: 3rem 0;
-            flex-wrap: wrap;
+            flex: 1 1 180px;
+            max-width: 320;
+            min-width: 0;
         }
 
         .tag-card {
@@ -433,13 +438,16 @@
         .section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
+            width: 100%;
             position: relative;
             z-index: 1;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            word-break: break-word;
+            padding: 0 0.5rem;
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
@@ -461,7 +469,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
             gap: 1.5rem;
             margin-top: 3rem;
         }
@@ -580,7 +588,7 @@
 
         .education-grid, .blogs-grid, .recommendations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat auto-fit, minmax(min(100%,280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -740,25 +748,26 @@
             }
 
             .nav-links {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    transform: translateX(110%);
-    opacity: 0;
-    visibility: hidden;
-    flex-direction: column;
-    background: var(--personal-bg-dark);
-    backdrop-filter: blur(15px);
-    padding: 1rem;
-    gap: 0.6rem;
-    width: 85vw;
-    max-width: 280px;
-    border-radius: 14px;
-    border: 2px solid var(--border);
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    z-index: 2000;
-}
-
+                position: fixed;
+                top: 70px;
+                right: 0.75;
+                transform: translateX(110%);
+                opacity: 0;
+                visibility: hidden;
+                flex-direction: column;
+                background: var(--personal-bg-dark);
+                backdrop-filter: blur(15px);
+                padding: 1rem;
+                gap: 0.6rem;
+                width: min(85vw, 270px);
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+                max-width: 280px;
+                border-radius: 14px;
+                border: 2px solid var(--border);
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                z-index: 2000;
+            }
 
             .nav-links.mobile-open {
                 transform: translateX(0);
@@ -793,7 +802,7 @@
 
             .hero h1 {
                 font-size: 2.5rem;
-                min-height: 3rem;
+                min-height: auto; 
             }
 
             .section {
@@ -813,6 +822,16 @@
 
             .tag-card {
                 padding: 0.8rem 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
 
             .section-title {
@@ -871,7 +890,28 @@
             </div>
         </h1>
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
-        
+        <div class="quote-section" style="
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    max-width: 280px;
+    z-index: 10;
+">
+    <div class="quote-card glow-card" style="
+        border-left: 4px solid var(--personal-accent-light);
+        text-align: left;
+        padding: 0.1rem 1.2rem;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.25);
+        backdrop-filter: blur(1px);
+    ">
+        <span style="font-size:1rem; line-height:0.3; color:var(--personal-accent-light); opacity:0.5; display:block; margin-bottom:0.4rem; font-family:Georgia,serif;">"</span>
+        <p style="font-size:0.95rem; font-style:var(); color:var(--text-primary); line-height:1; margin-bottom:0.3rem; font-family:Georgia,'Times New Roman',serif;">
+            Never depend on hope. Depend on numbers.
+        </p>
+        <span style="font-size:0.75rem; color:var(--personal-accent-light); font-weight:700; letter-spacing:0.02em; text-transform:propercase;">— RK</span>
+    </div>
+</div>
         <div class="tag-cards">
             <div class="tag-card glow-card"> 
                 <i class="fas fa-map-marker-alt"></i>
@@ -899,7 +939,7 @@
             A dedicated payroll specialist with 3+ years, expert in payroll processing, WPS compliance, and system optimization. Integrates HR and finance data to ensure accurate, on-time payments, strengthens compliance, and boosts efficiency through smart software and process improvements. Passionate markets enthusiast managing a diversified portfolio across Indian & US equities, Mutual funds, Bonds, and gold. Skilled in research, risk assessment, and trend analysis, with a commitment to continuous learning to optimize returns and manage risk effectively.
         </p>
     </section>
-
+        
     <section class="section" id="skills">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
