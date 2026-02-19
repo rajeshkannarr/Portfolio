@@ -355,11 +355,11 @@
         .tag-cards {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin: 3rem 0;
-            flex: 1 1 180px;
-            max-width: 320;
-            min-width: 0;
+            padding: 0 1rem;
+            width: 100%;
         }
 
         .tag-card {
@@ -834,7 +834,30 @@
                 font-size: 2.5rem;
                 min-height: auto; 
             }
+            .tag-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+    padding: 0 0.5rem;
+}
 
+.tag-card {
+    flex: 1 1 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+    min-width: 130px;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+}
+
+.tag-card h4 {
+    font-size: 0.85rem;
+}
+
+.tag-card i {
+    font-size: 0.85rem;
+}
             .section {
                 padding: 3rem 1rem;
             }
@@ -859,8 +882,25 @@
     max-width: 320px;
 }
 
-            .tag-card {
-                padding: 0.8rem 1.5rem;
+            .tag-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.tag-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    flex: unset;
+}
+
+.tag-card h4 {
+    font-size: 0.82rem;
+}
             }
             
             .action-buttons {
