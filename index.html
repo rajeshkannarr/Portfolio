@@ -588,7 +588,7 @@
 
         .education-grid, .blogs-grid, .recommendations-grid {
             display: grid;
-            grid-template-columns: repeat auto-fit, minmax(min(100%,280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -675,7 +675,7 @@
 
         .education-grid, .blogs-grid, .recommendations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -731,10 +731,40 @@
             border-color: rgba(76,175,80,0.85);
             filter: blur(14px);
         }
-
+        
+        /* Quote section desktop default */
+.quote-section {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    max-width: 260px;
+    z-index: 10;
+}
 
         @media (max-width: 768px) {
-            .nav-container {
+            /* Quote: stack below heading on mobile */
+.quote-section {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    max-width: 100% !important;
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+}
+
+/* Fix tag-cards wrapping on mobile */
+.tag-cards {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.tag-card {
+    flex: 1 1 140px;
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+}
+.nav-container {
                 height: 70px;
             }
 
@@ -819,6 +849,15 @@
                 font-size: 2rem;
                 min-height: 2.4rem;
             }
+            .tag-cards {
+    flex-direction: column;
+    align-items: center;
+}
+
+.tag-card {
+    width: 100%;
+    max-width: 320px;
+}
 
             .tag-card {
                 padding: 0.8rem 1.5rem;
@@ -892,9 +931,9 @@
         <p class="subtitle">Payroll Specialist | Finance Professional | Investments Enthusiast</p>
         <div class="quote-section" style="
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    max-width: 280px;
+    top: 1rem;
+    left: 1.5rem;
+    max-width: 260px;
     z-index: 10;
 ">
     <div class="quote-card glow-card" style="
@@ -905,8 +944,8 @@
         background: rgba(0,0,0,0.25);
         backdrop-filter: blur(1px);
     ">
-        <span style="font-size:1rem; line-height:0.3; color:var(--personal-accent-light); opacity:0.5; display:block; margin-bottom:0.4rem; font-family:Georgia,serif;">"</span>
-        <p style="font-size:0.95rem; font-style:var(); color:var(--text-primary); line-height:1; margin-bottom:0.3rem; font-family:Georgia,'Times New Roman',serif;">
+        <span style="font-size:1rem; line-height:0.5; color:var(--personal-accent-light); opacity:0.5; display:block; margin-bottom:0.4rem; font-family:Georgia,serif;">"</span>
+        <p style="font-size:0.95rem; font-style:italic; color:var(--text-primary); ...">
             Never depend on hope. Depend on numbers.
         </p>
         <span style="font-size:0.75rem; color:var(--personal-accent-light); font-weight:700; letter-spacing:0.02em; text-transform:propercase;">— RK</span>
